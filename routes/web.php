@@ -17,26 +17,27 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+
+//Publicas:
+Route::get('/Servicios', [
+	'uses' => 'PublicController@index',
+	'as' =>'servicios'
+]);
 
 //Login con twitter, facebook y google:
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
-//Route::post('/subscribe','PaymentsController@subscribe');
-//Para pagar la reservación
+//stripe:
 Route::post('/suscribirse', [
 	'uses' => 'PaymentsController@suscribirse',
 	'as' =>'suscribirse'
 ]);
 
-//para firebase:
-
-Route::get('/Reportar-Mascota', [
-	'uses' => 'FirebaseController@index',
-	'as' =>'reportar'
+Route::get('/Mascotas-Perdidas', [
+	'uses' => 'MascotasPerdidasController@index',
+	'as' =>'MascotasPerdidas'
 ]);
 
-Route::post('/Reportar-Mascota', 'FirebaseController@insert');
-
-//Route::get('/db','FirebaseController@index')->name('db');
+Route::post('/Mascotas-Perdidas', 'MascotasPerdidasController@store');

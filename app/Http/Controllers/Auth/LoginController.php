@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -79,7 +79,8 @@ class LoginController extends Controller
         $user = User::where('email', $userSocial->email)->first();
         if($user){
             if(Auth::loginUsingId($user->id)){
-                return redirect()->route('home');
+                //return redirect()->route('servicios');
+                return redirect('/');
             }
         }
 
@@ -99,7 +100,8 @@ class LoginController extends Controller
 
         if($userSignup){
             if(Auth::loginUsingId($userSignup->id)){
-                return redirect()->route('home');
+                //return redirect()->route('servicios');
+                return redirect('/');
             }
         }
     }
