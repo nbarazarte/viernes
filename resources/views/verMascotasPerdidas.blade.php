@@ -125,7 +125,7 @@
 
 
 
-            <div id="prueba"></div>
+            <div id="nuevaPublicacion"></div>
 
 
             @if(isset($datos))

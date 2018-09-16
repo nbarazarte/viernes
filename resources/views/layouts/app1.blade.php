@@ -86,7 +86,10 @@
 
     {!! Html::script('template/assets/js/vendor.js') !!}
     {!! Html::script('template/assets/js/app.js') !!}
-    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
-    {!! Html::script('template/assets/js/custom.js') !!}
+
+    @if (Route::current()->getName() == 'MascotasPerdidas')
+      <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+      {!! Html::script('template/assets/js/custom.js') !!}
+    @endif
   </body>
 </html>

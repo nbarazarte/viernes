@@ -11,117 +11,108 @@
 
   var database = firebase.database();
   var ref = database.ref('mascotas');
-
-  ref.once('value',gotData, errData);
+  
+  var contOn = 0;
+  
+  //ref.once('value',gotData, errData);
   ref.on('value',oneData, errData);
 
-var caja = document.getElementById('prueba');
-
+  var caja = document.getElementById('nuevaPublicacion');
 
 function oneData(data){
-  alert('oneData');
-
-  console.log(data.val());
-
-   if(data.val() != null){
-
-  //console.log(data);
-  //console.log(data.val());
-
-  var mascotas = data.val();
 
 
+      var elementos;
+      var mascotas = data.val();
+      var keys = Object.keys(mascotas);
+      //console.log(keys);
+      var mascotasArray = Object.values(mascotas);
+      //console.log(mascotasArray.reverse());
+      mascotasArray.reverse().forEach(function(element) {
+      console.log(element);
 
+      if(elementos == null){
+        elementos = "";
+      }
 
-  var keys = Object.keys(mascotas);
-
-
-
-  //console.log(keys);
-
-  var mascotasArray = Object.values(mascotas);
-
-  //console.log(mascotasArray.reverse());
-
-  
-
-
-
-  for (var i = keys.length-1; i > 0; i-- ) {
-    var k = keys[i];
-    //var lng_idusuario = mascotas[k].lng_idusuario;
-    var str_mascota = mascotas[k].str_mascota;
-  
-    //console.log(str_mascota);
-
-    caja.innerHTML = caja.innerHTML + str_mascota + "<br>" ;
-
-  }
-
-
-/**
-
-
-    var k = keys.length;
-    var lng_idusuario = mascotas[k].lng_idusuario;
-    var str_dueno = mascotas[k].str_dueno;
-    var str_telefono = mascotas[k].str_telefono;
-    var str_correo = mascotas[k].str_correo;
-    var str_mascota = mascotas[k].str_mascota;
-    var str_especie = mascotas[k].str_especie;
-    var str_ruta = mascotas[k].str_ruta;
-    var str_ciudad = mascotas[k].str_ciudad;    
-    var str_sector = mascotas[k].str_sector;
-    var str_fecha_perdida = mascotas[k].str_fecha_perdida;
-    var txt_descripcion = mascotas[k].txt_descripcion;     
-    //console.log(str_mascota, str_dueno);
-
-    caja.innerHTML = caja.innerHTML + str_mascota + "<br>" ;
-
-*/
+      //elementos = elementos + element['str_mascota'] + "<br>" ;
+elementos = elementos +'                <div class="row justify-content-center">';
+elementos +='                  <div class="col-md-10 col-lg-8">';
+elementos +='                    <div class="row gutter-1">';
+elementos +='';
+elementos +='                      <div class="col-12">';
+elementos +='                        <div class="boxed p-2">';
+elementos +='                          <div class="row align-items-center justify-content-between">';
+elementos +='                            <div class="col-10">';
+elementos +='                              <div class="media align-items-center">';
+elementos +='                                <img src="template/assets/images/demo/user-5.jpg" alt="Avatar" class="avatar avatar-lg rounded mr-3">';
+elementos +='                                <div class="media-body">';
+elementos +='                                  <h5 class="mb-0">' + element['str_mascota'] + '</h5>';
+elementos +='                                  <span class="text-muted">' + element['str_fecha_perdida'] + '</span>';
+elementos +='';
+elementos +='                                    <p>' + element['txt_descripcion'] + '</p>';
+elementos +='';
+elementos +='                                </div>';
+elementos +='                              </div>';
+elementos +='                            </div>';
+elementos +='                            <div class="col-2 text-md-right">';
+elementos +='                              <div class="dropdown">';
+elementos +='                                <a class="btn btn-ico btn-outline-light text-dark rounded btn-sm" href="settings.html#" role="button" id="dropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+elementos +='                                  <i class="icon-more-vertical fs-22"></i>';
+elementos +='                                </a>';
+elementos +='';
+elementos +='                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink-3">';
+elementos +='                                  <a class="dropdown-item" href="settings.html#">Make Primary</a>';
+elementos +='                                  <a class="dropdown-item" href="settings.html#">Remove</a>';
+elementos +='                                </div>';
+elementos +='                              </div>';
+elementos +='                            </div>';
+elementos +='                          </div>';
+elementos +='                        </div>';
+elementos +='                      </div>';
+elementos +='';
+elementos +='                    </div>';
+elementos +='                  </div>';
+elementos +='                </div>';
 
 
 
-}
 
+   });
+
+     caja.innerHTML = elementos;
+     
 
 }
 
+/*
 function gotData(data){
-
   //alert('todos');
 
   //console.log(data);
   //console.log(data.val());
 
- if(data.val() != null){
+   if(data.val() != null){
 
+      var mascotas = data.val();
+      var keys = Object.keys(mascotas);
+      //console.log(keys);
+      var mascotasArray = Object.values(mascotas);
+      //console.log(mascotasArray.reverse());
+      mascotasArray.reverse().forEach(function(element) {
+      //console.log(element);
+      caja.innerHTML = caja.innerHTML + element['str_mascota'] + "<br>" ;
 
-  var mascotas = data.val();
+    });
 
+  }
 
-
-  var keys = Object.keys(mascotas);
-  //console.log(keys);
-
-  var mascotasArray = Object.values(mascotas);
-  //console.log(mascotasArray.reverse());
-
-  mascotasArray.reverse().forEach(function(element) {
-    //console.log(element);
-    caja.innerHTML = caja.innerHTML + element['str_mascota'] + "<br>" ;
-
-  });
-
-}
-}
-
+}*/
 
 function errData(err){
   console.log('Error!');
   console.log(err);
 }
-
 
 document.getElementById("btnpmp").addEventListener("click", pmp);
 
