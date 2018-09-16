@@ -14548,6 +14548,9 @@ body > footer {
 body [class*="container"] .row:not(:last-child) {
   margin-bottom: 3.125rem; }
 
+body [class*="containerMascotas"] .row:not(:last-child) {
+  margin-bottom: 0.125rem; }  
+
 @media (max-width: 767.98px) {
   body > section,
   body > footer {

@@ -38,10 +38,7 @@ class MascotasPerdidasController extends Controller
     public function index()
     {        
 
-    return view('verMascotasPerdidas');
 
-/*
- 
         //order the reference's children by their key in ascending order
         $reference = $this->database->getReference('mascotas');
         //$reference = $this->database->getReference('mascotasPerdidas');
@@ -52,11 +49,6 @@ class MascotasPerdidasController extends Controller
         //dd($childKeys);die();
         //dd($datos);die();
 
-
-
-
-
-
         if(empty($datos)){
 
             return view('verMascotasPerdidas');
@@ -65,7 +57,7 @@ class MascotasPerdidasController extends Controller
 
             return view('verMascotasPerdidas',compact('datos'));
         }
-   */
+   
 
     }
 
