@@ -108,7 +108,7 @@
               </article>
               <article class="tile tile-long">
                 <div class="tile-image" style="background-image: url(template/assets/images/demo/travel/mascotasPerdidas.jpg)"></div>
-                <a href="{{ route('MascotasPerdidas')}}" class="tile-content">
+                <a href="#" class="tile-content">
                   <div class="tile-header on-hover text-right">
                     
                   </div>

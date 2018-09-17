@@ -19,7 +19,7 @@ class MascotasPerdidas extends Model
      * @var array
      */
     protected $fillable = [
-        'lng_idusuario', 'str_dueno', 'str_telefono', 'str_correo', 'str_mascota', 'str_especie', 'str_ruta_foto', 'str_ciudad','str_sector','str_fecha_perdida','txt_descripcion',
+        'lng_idusuario', 'str_dueno', 'str_telefono', 'str_correo', 'str_mascota', 'str_especie', 'str_categoria','str_ruta_foto', 'str_ciudad','str_sector','str_fecha_perdida','txt_descripcion',
     ];
 
 }

@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
-use App\MascotasPerdidas;
+use App\Mascotas;
 use App\Http\Requests\ReglasMascotasPerdidas;
 use DB;
 
-class MascotasPerdidasController extends Controller
-{    
-    protected $database;
+class WelcomeController extends Controller
+{
+protected $database;
 
     /**
      * Create a new controller instance.
@@ -26,7 +26,7 @@ class MascotasPerdidasController extends Controller
         $firebase = (new Factory)->withServiceAccount($serviceAccount)->create();
         $this->database = $firebase->getDatabase();
 
-        $this->middleware('auth');
+        //$this->middleware('auth');
 
     }
 
@@ -50,11 +50,11 @@ class MascotasPerdidasController extends Controller
 
         if(empty($datos)){
 
-            return view('verMascotasPerdidas');
+            return view('welcome');
 
         }else{
 
-            return view('verMascotasPerdidas',compact('datos'));
+            return view('welcome',compact('datos'));
         }
 
     }
@@ -71,7 +71,7 @@ class MascotasPerdidasController extends Controller
         $validated = $request->validated();
         $this->create($request->all());
 
-        $this->database->getReference('mascotasPerdidas')->push($request->all())->getKey();
+        $this->database->getReference('mascotas')->push($request->all())->getKey();
 
         return redirect()->back();        
     }
@@ -80,11 +80,11 @@ class MascotasPerdidasController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return MascotasPerdidas
+     * @return Mascotas
      */
     public function create(array $data)
     {
-        MascotasPerdidas::create([
+        Mascotas::create([
 
             'lng_idusuario' => \Auth::user()->id,
             'str_dueno' => \Auth::user()->name, 

@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+	'uses' => 'WelcomeController@index',
+	'as' =>'welcome'
+]);
+
+Route::post('/', 'WelcomeController@store');
 
 Auth::routes();
 
@@ -35,9 +38,3 @@ Route::post('/suscribirse', [
 	'as' =>'suscribirse'
 ]);
 
-Route::get('/Mascotas-Perdidas', [
-	'uses' => 'MascotasPerdidasController@index',
-	'as' =>'MascotasPerdidas'
-]);
-
-Route::post('/Mascotas-Perdidas', 'MascotasPerdidasController@store');

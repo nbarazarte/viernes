@@ -36,7 +36,7 @@ function oneData(data){
 
         //elementos = elementos + element['str_mascota'] + "<br>" ;
           elementos = elementos +'                <div class="row justify-content-center">';
-          elementos +='                  <div class="col-md-10 col-lg-8">';
+          elementos +='                  <div class="col-md-11">';
           elementos +='                    <div class="row gutter-1">';
           elementos +='';
           elementos +='                      <div class="col-12">';
@@ -56,13 +56,13 @@ function oneData(data){
           elementos +='                            </div>';
           elementos +='                            <div class="col-2 text-md-right">';
           elementos +='                              <div class="dropdown">';
-          elementos +='                                <a class="btn btn-ico btn-outline-light text-dark rounded btn-sm" href="settings.html#" role="button" id="dropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
-          elementos +='                                  <i class="icon-more-vertical fs-22"></i>';
+          elementos +='                                <a class="btn btn-ico  text-dark rounded btn-sm" href="#" role="button" id="dropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Compartir">';
+          elementos +='                                   <i class="far fa-share-square fs-22"></i>';
           elementos +='                                </a>';
           elementos +='';
           elementos +='                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink-3">';
-          elementos +='                                  <a class="dropdown-item" href="settings.html#">Make Primary</a>';
-          elementos +='                                  <a class="dropdown-item" href="settings.html#">Remove</a>';
+          elementos +='                                  <a class="dropdown-item" href="#">Make Primary</a>';
+          elementos +='                                  <a class="dropdown-item" href="#">Remove</a>';
           elementos +='                                </div>';
           elementos +='                              </div>';
           elementos +='                            </div>';
@@ -110,11 +110,13 @@ function errData(err){
 
 document.getElementById("btnpmp").addEventListener("click", pmp);
 
-function pmp(){//publicar mascotas perdidas
+function pmp(){//publicar mascotas 
+
 
    var data = {
 
     lng_idusuario: document.getElementById('lng_idusuario').value,
+    str_categoria: document.getElementById('str_categoria').value,
     str_dueno: document.getElementById('str_dueno').value, 
     str_telefono: document.getElementById('str_telefono').value, 
     str_correo: document.getElementById('str_correo').value,
@@ -125,6 +127,7 @@ function pmp(){//publicar mascotas perdidas
     str_sector: document.getElementById('str_sector').value,
     str_fecha_perdida: document.getElementById('str_fecha_perdida').value, 
     txt_descripcion: document.getElementById('txt_descripcion').value,
+    str_fecha_publicacion: document.getElementById('str_fecha_publicacion').value, 
 
   }
 
