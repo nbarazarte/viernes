@@ -337,7 +337,7 @@
                                     <input type="hidden" id="lng_idusuario" name="lng_idusuario" value="{{ Auth::user()->id }}" readonly="yes">
                                     <input type="hidden" id="str_dueno" name="str_dueno" value="{{ Auth::user()->name }}" readonly="yes">
                                     <input type="hidden" id="str_correo" name="str_corro" value="{{ Auth::user()->email }}" readonly="yes">
-                                    <input type="hidden" id="str_fecha_publicacion" name="str_fecha_publicacion" value="{{ date('d/m/Y') }}" readonly="yes">                                                                    
+                                    <input type="hidden" id="str_fecha_publicacion" name="str_fecha_publicacion" value="{{ date('d/m/Y') }}" readonly="yes"> <input type="hidden" id="avatar_usuario" name="str_fecha_publicacion" value="{{ Auth::user()->avatar}}" readonly="yes">
                                 </div>
 
                                 <div class="form-group col-md-4 d-flex justify-content-center">
@@ -419,7 +419,10 @@
                             <div class="col-md-2" style="">
                               <div class="d-flex justify-content-center">
                                 <div class="align-self-center">
-                                  <img src="template/assets/images/demo/user-5.jpg" alt="Avatar" class="avatar avatar-lg rounded mr-3">
+                                  
+
+                                  <img src="{{ $dato['avatar_usuario']  }}" alt="Avatar" class="avatar avatar-lg rounded mr-3">
+
                                 </div>
                               </div>
                             </div>
@@ -468,6 +471,7 @@
           <!-- / tab -->
 
         </div>
+        <br>
       </div>
     </section>
 

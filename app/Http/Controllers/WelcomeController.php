@@ -87,6 +87,7 @@ protected $database;
         Mascotas::create([
 
             'lng_idusuario' => \Auth::user()->id,
+            'str_categoria' => $data['str_categoria'],
             'str_dueno' => \Auth::user()->name, 
             'str_telefono' => $data['str_telefono'], 
             'str_correo' => \Auth::user()->email,

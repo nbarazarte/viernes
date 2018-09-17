@@ -26,6 +26,7 @@ function oneData(data){
       var keys = Object.keys(mascotas);
       //console.log(keys);
       var mascotasArray = Object.values(mascotas);
+      var avatar;
       //console.log(mascotasArray.reverse());
       mascotasArray.reverse().forEach(function(element) {
       //console.log(element);
@@ -35,7 +36,15 @@ function oneData(data){
         }
 
 
+        if(element['avatar_usuario'] == ""){
 
+          avatar = '<i class="fas fa-paw fs-22"></i>';
+
+        }else{  
+
+          avatar = '<img src="'+element['avatar_usuario']+'" alt="Avatar" class="avatar avatar-lg rounded mr-3">';
+
+        }
 
 
 
@@ -55,7 +64,7 @@ elementos +='';
 elementos +='                            <div class="col-md-2" style="">';
 elementos +='                              <div class="d-flex justify-content-center">';
 elementos +='                                <div class="align-self-center">';
-elementos +='                                  <img src="template/assets/images/demo/user-5.jpg" alt="Avatar" class="avatar avatar-lg rounded mr-3">';
+elementos +=                                  avatar;
 elementos +='                                </div>';
 elementos +='                              </div>';
 elementos +='                            </div>';
@@ -149,6 +158,7 @@ function pmp(){//publicar mascotas
     str_fecha_perdida: document.getElementById('str_fecha_perdida').value, 
     txt_descripcion: document.getElementById('txt_descripcion').value,
     str_fecha_publicacion: document.getElementById('str_fecha_publicacion').value, 
+    avatar_usuario: document.getElementById('avatar_usuario').value, 
 
   }
 

@@ -16692,6 +16692,9 @@ footer {
   .avatar[class*="-xl"] {
     width: 10rem;
     height: auto; }
+  .avatar[class*="-login"] {
+    width: 2rem;
+    height: auto; }    
 
 .user-grid {
   -webkit-user-select: none;

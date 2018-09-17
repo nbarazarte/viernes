@@ -52,7 +52,7 @@
               <ul class="navbar-nav align-items-center mr-0">
                 <li>
                   <a class="nav-link" href="{{ route('login')}}" >
-                    Iniciar Sesión
+                    Iniciar Sesión <i class="fas fa-paw fs-22"></i>
                   </a>
 
                 </li>
@@ -62,9 +62,22 @@
 
               <ul class="navbar-nav align-items-center mr-0">
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="travel.html#" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ ucwords(Auth::user()->name) }}
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    
+                      {{ ucwords(Auth::user()->name) }}
+
+                      @if(empty(Auth::user()->avatar))
+                        
+                        <i class="fas fa-paw fs-22"></i>
+                        
+                      @else
+
+                        <img src="{{ Auth::user()->avatar }}" alt="Avatar" class="avatar avatar-login rounded">  
+        
+                      @endif
+                    
                   </a>
+
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Mi Cuenta</a>
                     <div class="dropdown-divider"></div>
@@ -76,6 +89,7 @@
                       </form>
 
                   </div>
+
                 </li>
               </ul>
 
