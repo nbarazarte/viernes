@@ -34,45 +34,66 @@ function oneData(data){
           elementos = "";
         }
 
+
+
+
+
+
+
+
+
+
         //elementos = elementos + element['str_mascota'] + "<br>" ;
-          elementos = elementos +'                <div class="row justify-content-center">';
-          elementos +='                  <div class="col-md-11">';
-          elementos +='                    <div class="row gutter-1">';
-          elementos +='';
-          elementos +='                      <div class="col-12">';
-          elementos +='                        <div class="boxed p-2">';
-          elementos +='                          <div class="row align-items-center justify-content-between">';
-          elementos +='                            <div class="col-10">';
-          elementos +='                              <div class="media align-items-center">';
-          elementos +='                                <img src="template/assets/images/demo/user-5.jpg" alt="Avatar" class="avatar avatar-lg rounded mr-3">';
-          elementos +='                                <div class="media-body">';
-          elementos +='                                  <h5 class="mb-0">' + element['str_mascota'] + '</h5>';
-          elementos +='                                  <span class="text-muted">' + element['str_fecha_perdida'] + '</span>';
-          elementos +='';
-          elementos +='                                    <p>' + element['txt_descripcion'] + '</p>';
-          elementos +='';
-          elementos +='                                </div>';
-          elementos +='                              </div>';
-          elementos +='                            </div>';
-          elementos +='                            <div class="col-2 text-md-right">';
-          elementos +='                              <div class="dropdown">';
-          elementos +='                                <a class="btn btn-ico  text-dark rounded btn-sm" href="#" role="button" id="dropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Compartir">';
-          elementos +='                                   <i class="far fa-share-square fs-22"></i>';
-          elementos +='                                </a>';
-          elementos +='';
-          elementos +='                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink-3">';
-          elementos +='                                  <a class="dropdown-item" href="#">Make Primary</a>';
-          elementos +='                                  <a class="dropdown-item" href="#">Remove</a>';
-          elementos +='                                </div>';
-          elementos +='                              </div>';
-          elementos +='                            </div>';
-          elementos +='                          </div>';
-          elementos +='                        </div>';
-          elementos +='                      </div>';
-          elementos +='';
-          elementos +='                    </div>';
-          elementos +='                  </div>';
-          elementos +='                </div>';
+elementos = elementos +'                  <div class="row justify-content-center">';
+elementos +='                  <div class="col-md-11">';
+elementos +='                    <div class="row gutter-1">';
+elementos +='';
+elementos +='                      <div class="col-12">';
+elementos +='                        <div class="boxed p-2">';
+elementos +='                          <div class="row align-items-center justify-content-between">';
+elementos +='';
+elementos +='                            <div class="col-md-2" style="">';
+elementos +='                              <div class="d-flex justify-content-center">';
+elementos +='                                <div class="align-self-center">';
+elementos +='                                  <img src="template/assets/images/demo/user-5.jpg" alt="Avatar" class="avatar avatar-lg rounded mr-3">';
+elementos +='                                </div>';
+elementos +='                              </div>';
+elementos +='                            </div>';
+elementos +='';
+elementos +='                            <div class="col-md-9" style="n">';
+elementos +='                              <h5 class="mb-0">'+ element['str_mascota'] +' </h5>';
+elementos +='                              <span class="text-muted">'+element['str_fecha_publicacion']+'</span>      ';
+elementos +='                              <p style="justify-content: center;">';
+elementos +=                                  element['txt_descripcion'];
+elementos +='                              </p>';
+elementos +='                            </div>';
+elementos +='';
+elementos +='                            <div class="col-md-1" style="">';
+elementos +='';
+elementos +='                              <div class="d-flex justify-content-center">';
+elementos +='                                <div class="align-self-center">';
+elementos +='                                  <div class="dropdown">';
+elementos +='                                    <a class="btn btn-ico  text-dark rounded btn-sm" href="#" role="button" id="dropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Compartir">';
+elementos +='                                      <i class="far fa-share-square fs-22"></i>';
+elementos +='                                    </a>';
+elementos +='';
+elementos +='                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink-3">';
+elementos +='                                      <a class="dropdown-item" href="#">Make Primary</a>';
+elementos +='                                      <a class="dropdown-item" href="#">Remove</a>';
+elementos +='                                    </div>';
+elementos +='                                  </div>';
+elementos +='                                </div>';
+elementos +='                              </div>';
+elementos +='';
+elementos +='                            </div>';
+elementos +='';
+elementos +='                        </div>';
+elementos +='                      </div>';
+elementos +='                    </div>';
+elementos +='                  </div>';
+elementos +='                </div>';
+elementos +='              </div>';
+
 
      });
 

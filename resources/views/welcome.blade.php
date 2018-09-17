@@ -349,6 +349,44 @@
                               </div>    
 
                             </form>
+
+
+
+
+       <div class="tab-pane show active bg-light" id="component-1-1" role="tabpanel" aria-labelledby="component-1-1">
+          <div class="component-example">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 col-lg-12">
+                  <div class="card">
+                    <img class="card-img-top" src="template/assets/images/demo/image-1.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some </p>
+                      
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                            @endguest
                         </div>
                       </div>
@@ -358,13 +396,19 @@
                 </div>
               </div>
 
+
+
+
+
+
+
+
             <div id="nuevaPublicacion">
 
             @if(isset($datos))
 
               @foreach(array_reverse($datos) as $dato)
-
-                <div class="row justify-content-center">
+                 <div class="row justify-content-center">
                   <div class="col-md-11">
                     <div class="row gutter-1">
 
@@ -372,38 +416,47 @@
                         <div class="boxed p-2">
                           <div class="row align-items-center justify-content-between">
 
-                            <div class="col-10">
-                              <div class="media align-items-center">
-                                <img src="template/assets/images/demo/user-5.jpg" alt="Avatar" class="avatar avatar-lg rounded mr-3">
-                                <div class="media-body">
-                                  <h5 class="mb-0">{{ $dato['str_mascota']  }} </h5>
-                                  <span class="text-muted">{{ $dato['str_fecha_perdida']  }} </span>
-
-                                    <p>{{ $dato['txt_descripcion']  }} </p>
-
+                            <div class="col-md-2" style="">
+                              <div class="d-flex justify-content-center">
+                                <div class="align-self-center">
+                                  <img src="template/assets/images/demo/user-5.jpg" alt="Avatar" class="avatar avatar-lg rounded mr-3">
                                 </div>
                               </div>
                             </div>
 
-                            <div class="col-2 text-md-right">
-                              <div class="dropdown">
-                                <a class="btn btn-ico  text-dark rounded btn-sm" href="#" role="button" id="dropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Compartir">
-                                  <i class="far fa-share-square fs-22"></i>
-                                </a>
+                            <div class="col-md-9" style="n">
+                              <h5 class="mb-0">{{ $dato['str_mascota']  }} </h5>
+                              <span class="text-muted">{{ $dato['str_fecha_perdida']  }}</span>      
+                              <p style="justify-content: center;">
+                                {{ $dato['txt_descripcion']  }}
+                              </p>
+                            </div>
 
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink-3">
-                                  <a class="dropdown-item" href="#">Make Primary</a>
-                                  <a class="dropdown-item" href="#">Remove</a>
+                            <div class="col-md-1" style="">
+
+                              <div class="d-flex justify-content-center">
+                                <div class="align-self-center">
+                                  <div class="dropdown">
+                                    <a class="btn btn-ico  text-dark rounded btn-sm" href="#" role="button" id="dropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Compartir">
+                                      <i class="far fa-share-square fs-22"></i>
+                                    </a>
+
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink-3">
+                                      <a class="dropdown-item" href="#">Make Primary</a>
+                                      <a class="dropdown-item" href="#">Remove</a>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
+
                             </div>
-                          </div>
+
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </div>
+              </div>
             
               @endforeach
 

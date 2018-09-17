@@ -153,6 +153,7 @@
 
     @if (Route::current()->getName() == 'welcome')
       <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+ 
       {!! Html::script('template/assets/js/custom.js') !!}
     @endif
   </body>
