@@ -1031,18 +1031,13 @@
                   <div class="col">
                     
                     <!-- Title -->
-                    <h5 class="mb-0">
-                      Servicios
-                    </h5>
-
-                  </div>
-                  <div class="col-auto">
-                    
-                    <small class="text-muted">
+  
+                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Servicios <small class="text-muted">
                      <span class="badge badge-dark" style="background-color: #386f00">793</span>
-                    </small>
+                    </small></button>
 
                   </div>
+
                 </div> <!-- / .row -->
 
                 <!-- Divider -->
@@ -1052,19 +1047,12 @@
                   <div class="col">
                     
                     <!-- Title -->
-                    <h5 class="mb-0">
-                      
-                      Variedades
-                    </h5>
+                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Variedades <small class="text-muted">
+                     <span class="badge badge-dark" style="background-color: #4a0093">793</span>
+                    </small></button>
 
                   </div>
-                  <div class="col-auto">
-                    
-                    <small class="text-muted">
-                     <span class="badge badge-dark" style="background-color: #4a0093">723</span>
-                    </small>
 
-                  </div>
                 </div> <!-- / .row -->
 
                 <hr>
@@ -1072,19 +1060,13 @@
                 <div class="row align-items-center">
                   <div class="col">
                     
-                    <!-- Title -->
-                    <h5 class="mb-0">
-                      Política
-                    </h5>
+                   <!-- Title -->
+                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Política <small class="text-muted">
+                     <span class="badge badge-warning">793</span>
+                    </small></button>
 
                   </div>
-                  <div class="col-auto">
-                    
-                    <small class="text-muted">
-                     <span class="badge badge-warning">293</span>
-                    </small>
 
-                  </div>
                 </div> <!-- / .row -->
 
                 <!-- Divider -->
@@ -1094,18 +1076,12 @@
                   <div class="col">
                     
                     <!-- Title -->
-                    <h5 class="mb-0">
-                      Deportes
-                    </h5>
+                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Deportes <small class="text-muted">
+                     <span class="badge badge-secondary">793</span>
+                    </small></button>
 
                   </div>
-                  <div class="col-auto">
-                    
-                    <small class="text-muted">
-                     <span class="badge badge-secondary">293</span>
-                    </small>
 
-                  </div>
                 </div> <!-- / .row -->
 
                 <!-- Divider -->
@@ -1115,18 +1091,12 @@
                   <div class="col">
                     
                     <!-- Title -->
-                    <h5 class="mb-0">
-                      Religión
-                    </h5>
+                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Religión <small class="text-muted">
+                     <span class="badge badge-dark" style="background-color: #ff6c6c">793</span>
+                    </small></button>
 
                   </div>
-                  <div class="col-auto">
-                    
-                    <small class="text-muted">
-                     <span class="badge badge-dark" style="background-color: #ff6c6c">293</span>
-                    </small>
 
-                  </div>
                 </div> <!-- / .row -->
 
                 <!-- Divider -->
@@ -1136,18 +1106,12 @@
                   <div class="col">
                     
                     <!-- Title -->
-                    <h5 class="mb-0">
-                      Economía
-                    </h5>
+                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Economía <small class="text-muted">
+                     <span class="badge badge-info">793</span>
+                    </small></button>
 
                   </div>
-                  <div class="col-auto">
-                    
-                    <small class="text-muted">
-                     <span class="badge badge-info">293</span>
-                    </small>
 
-                  </div>
                 </div> <!-- / .row -->
 
                 <!-- Divider -->
@@ -1157,18 +1121,12 @@
                   <div class="col">
                     
                     <!-- Title -->
-                    <h5 class="mb-0">
-                      Moda
-                    </h5>
+                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Moda <small class="text-muted">
+                     <span class="badge badge-dark" style="background-color: #ff2492">793</span>
+                    </small></button>
 
                   </div>
-                  <div class="col-auto">
-                    
-                    <small class="text-muted">
-                     <span class="badge badge-dark" style="background-color: #ff2492">293</span>
-                    </small>
 
-                  </div>
                 </div> <!-- / .row -->
 
                 <!-- Divider -->
@@ -1178,18 +1136,12 @@
                   <div class="col">
                     
                     <!-- Title -->
-                    <h5 class="mb-0">
-                      Mascotas
-                    </h5>
+                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Mascotas <small class="text-muted">
+                     <span class="badge badge-dark" style="background-color: #2424ff">793</span>
+                    </small></button>
 
                   </div>
-                  <div class="col-auto">
-                    
-                    <small class="text-muted">
-                     <span class="badge badge-dark" style="background-color: #2424ff">324</span>
-                    </small>
 
-                  </div>
                 </div> <!-- / .row -->
 
                 <!-- Divider -->
@@ -1199,18 +1151,12 @@
                   <div class="col">
                     
                     <!-- Title -->
-                    <h5 class="mb-0">
-                      Salud
-                    </h5>
+                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Salud <small class="text-muted">
+                     <span class="badge badge-success">793</span>
+                    </small></button>
 
                   </div>
-                  <div class="col-auto">
-                    
-                    <small class="text-muted">
-                     <span class="badge badge-success">293</span>
-                    </small>
 
-                  </div>
                 </div> <!-- / .row -->
 
                 <!-- Divider -->
@@ -1220,18 +1166,12 @@
                   <div class="col">
                     
                     <!-- Title -->
-                    <h5 class="mb-0">
-                      Sexo
-                    </h5>
+                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Sexo <small class="text-muted">
+                     <span class="badge badge-dark" style="background-color: red">793</span>
+                    </small></button>
 
                   </div>
-                  <div class="col-auto">
-                    
-                    <small class="text-muted">
-                     <span class="badge badge-dark" style="background-color: red">193</span>
-                    </small>
 
-                  </div>
                 </div> <!-- / .row -->
 
                 <!-- Divider -->
