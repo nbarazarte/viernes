@@ -39,7 +39,7 @@ protected $database;
     {        
 
         //order the reference's children by their key in ascending order
-        $reference = $this->database->getReference('mascotas');
+        $reference = $this->database->getReference('timeline');
         //$reference = $this->database->getReference('mascotasPerdidas');
         $shallow = $reference->shallow();
         $snapshot = $reference->getSnapshot();
@@ -50,11 +50,11 @@ protected $database;
 
         if(empty($datos)){
 
-            return view('welcome');
+            return view('welcomeDashkit');
 
         }else{
 
-            return view('welcome',compact('datos'));
+            return view('welcomeDashkit',compact('datos'));
         }
 
     }
@@ -71,7 +71,7 @@ protected $database;
         $validated = $request->validated();
         $this->create($request->all());
 
-        $this->database->getReference('mascotas')->push($request->all())->getKey();
+        $this->database->getReference('timeline')->push($request->all())->getKey();
 
         return redirect()->back();        
     }

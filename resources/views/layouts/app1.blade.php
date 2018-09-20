@@ -4,11 +4,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Pruebas descripción"><!-- cambiar esto -->
+
+    <meta property="og:url"           content="{{ config('app.url', 'ejemplo.com') }}" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="{{ config('app.name', 'Laravel') }}" />
+    <meta property="og:description"   content="Pruebas descripción" /><!-- cambiar esto -->
+    <meta property="og:image"         content="" />    
     
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Chef4pets</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
     {!! Html::style('template/assets/css/vendor.css') !!}
     {!! Html::style('template/assets/css/style.css') !!}
 
@@ -164,6 +171,20 @@
 
     {!! Html::script('template/assets/js/vendor.js') !!}
     {!! Html::script('template/assets/js/app.js') !!}
+    <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
+  <!-- Load Facebook SDK for JavaScript -->
+
+    <div id="fb-root"></div>
+  
+    <script>
+      (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.1&appId=923879157809752&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>    
 
     @if (Route::current()->getName() == 'welcome')
       <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>

@@ -52,7 +52,8 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://localhost:8000'),
+    'urlfacebook' => env('APP_URLFACEBOOK', 'localhost:8000'),
 
     /*
     |--------------------------------------------------------------------------

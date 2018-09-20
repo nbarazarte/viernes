@@ -352,7 +352,6 @@
 
 
 
-
        <div class="tab-pane show active bg-light" id="component-1-1" role="tabpanel" aria-labelledby="component-1-1">
           <div class="component-example">
             <div class="container">
@@ -376,17 +375,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
                            @endguest
                         </div>
                       </div>
@@ -396,18 +384,12 @@
                 </div>
               </div>
 
-
-
-
-
-
-
-
             <div id="nuevaPublicacion">
 
             @if(isset($datos))
 
               @foreach(array_reverse($datos) as $dato)
+
                  <div class="row justify-content-center">
                   <div class="col-md-11">
                     <div class="row gutter-1">
@@ -420,8 +402,15 @@
                               <div class="d-flex justify-content-center">
                                 <div class="align-self-center">
                                   
+                                   @if(empty($dato['avatar_usuario']))
 
-                                  <img src="{{ $dato['avatar_usuario']  }}" alt="Avatar" class="avatar avatar-lg rounded mr-3">
+                                    <i class="fas fa-paw fs-40"></i>
+
+                                  @else
+
+                                     <img src="{{ $dato['avatar_usuario'] }}" alt="Avatar" class="avatar avatar-lg rounded mr-3">
+
+                                  @endif                                 
 
                                 </div>
                               </div>
@@ -432,6 +421,9 @@
                               <span class="text-muted">{{ $dato['str_fecha_perdida']  }}</span>      
                               <p style="justify-content: center;">
                                 {{ $dato['txt_descripcion']  }}
+
+                     
+
                               </p>
                             </div>
 
@@ -445,9 +437,18 @@
                                     </a>
 
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink-3">
-                                      <a class="dropdown-item" href="#">Make Primary</a>
-                                      <a class="dropdown-item" href="#">Remove</a>
+                                      
+
+                                      <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="default">Tweet</a>
+
+                                      <div class="fb-share-button" data-href="http://solucionesbestoffice.com/Colorear-con-BestOffice" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsolucionesbestoffice.com%2FColorear-con-BestOffice%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>                                
+
+
+
+                  
                                     </div>
+
+
                                   </div>
                                 </div>
                               </div>
