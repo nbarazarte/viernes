@@ -110,6 +110,7 @@ elementos +='                                </div>';
 elementos +='                              </div>';
 elementos +='                            </div> ';
 elementos +='                          </div>';
+elementos +='                          <hr>';
 
 
 
@@ -168,5 +169,6 @@ function pmp(){//publicar mascotas
   ref.push(data);
 
   document.getElementById('txt_descripcion').value = "";
+  document.getElementById('str_ruta').value = "";
 
 }

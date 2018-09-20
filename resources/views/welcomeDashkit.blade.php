@@ -742,36 +742,34 @@
 
                       ?>                      
 
-                      <form>
-                        <textarea id="txt_descripcion" name="txt_descripcion" class="form-control" placeholder="Di lo que quieras..." rows="4"></textarea>
+                        <textarea id="txt_descripcion" name="txt_descripcion" class="form-control" placeholder="Di lo que quieras..." rows="4" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></textarea>
                         <input type="hidden" id="lng_idusuario" name="lng_idusuario" value="{{ Auth::user()->id }}" readonly="yes">
                         <input type="hidden" id="usuario" name="usuario" value="{{ Auth::user()->name }}" readonly="yes">                        
                         <input type="hidden" id="str_correo" name="str_corro" value="{{ Auth::user()->email }}" readonly="yes">
                         <input type="hidden" id="str_fecha_publicacion" name="str_fecha_publicacion" value="{{ date('d/m/Y') }}" readonly="yes"> 
-                        <input type="hidden" id="avatar_usuario" name="avatar_usuario" value="{{ Auth::user()->avatar }}" readonly="yes">
-                        <hr>
+                        <input type="hidden" id="avatar_usuario" name="avatar_usuario" value="{{ Auth::user()->avatar }}" readonly="yes">               
                         <input type="hidden" id="str_categoria" name="str_categoria" value="ninguna" readonly="yes">
-                        <input type="file" class="form-control-file form-control-sm" id="str_ruta" name="str_ruta" aria-describedby="" required>
-
-
                         <input type="hidden" id="str_hora" name="str_hora" value="{{ $tiempo }}" readonly="yes">
-
-                      </form>
-                      
+                         
                     </div>
 
                     <div class="col-auto">
 
-                          <div class="d-flex justify-content-center">
-                            <button id="btnpmp" type="button" class="btn btn-rounded btn-primary btn-sm">Publicar</button>
-                          </div>                                            
+                      <div class="d-flex justify-content-center">
+                        <button id="btnpmp" type="button" class="btn btn-rounded btn-primary btn-sm">Publicar</button>
+                      </div>                                            
                       
                     </div>
                   </div>
                 </div>
 
-                <hr>
+                <div class="collapse" id="collapseExample">
+                  <div class="card card-body">
+                    <input type="file" class="form-control-file form-control-sm" id="str_ruta" name="str_ruta" aria-describedby="" required>
+                  </div>
+                </div>
 
+                <hr>
                 @endguest
 
                     <!-- Inicio Nueva Publicación-->
@@ -875,6 +873,7 @@
                             </div> 
                           </div>
 
+                          <hr>
 
                         @endforeach
 
