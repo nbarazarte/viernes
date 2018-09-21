@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="templateDashkit/assets/libs/select2/dist/css/select2.min.css">
     <link rel="stylesheet" href="templateDashkit/assets/libs/flatpickr/dist/flatpickr.min.css">
 
+    {!! Html::style('template/assets/css/custom.css') !!}
+
     <!-- Theme CSS -->
     <!-- Values are "toggle", "light", and "dark". See "Getting Started" for more information -->
     <!-- Toggle Mode: For demo only, but allows a user to seamlessly toggle between light/dark modes -->

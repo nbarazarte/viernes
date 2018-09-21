@@ -39,8 +39,7 @@ protected $database;
     {        
 
         //order the reference's children by their key in ascending order
-        $reference = $this->database->getReference('timeline');
-        //$reference = $this->database->getReference('mascotasPerdidas');
+        $reference = $this->database->getReference('timeline');        
         $shallow = $reference->shallow();
         $snapshot = $reference->getSnapshot();
         //$childKeys = $reference->getChildKeys();
@@ -50,11 +49,11 @@ protected $database;
 
         if(empty($datos)){
 
-            return view('welcomeDashkit');
+            return view('welcome');
 
         }else{
 
-            return view('welcomeDashkit',compact('datos'));
+            return view('welcome',compact('datos'));
         }
 
     }
