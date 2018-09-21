@@ -915,27 +915,13 @@
                     <div id="msjNuevaspublicaciones" class="">
                       <div class="alert alert-warning alert-dismissible fade show d-flex justify-content-center" role="alert">
                         
-                        Hola
-                        @guest
-
-                        @else
-
-                          {{ ucwords(Auth::user()->name) }} 
-
-                        @endguest
-
-                        hay&nbsp;<b id="contNuevaspublicaciones"> </b> <a id="leerMsj" href="#!">&nbsp;leer</a>
+                        Hay&nbsp;<b id="contNuevaspublicaciones"> </b> <a id="leerMsj" href="#!">&nbsp;leer</a>
       
                       </div>
                     </div>
-
-                    
-
-
+                  
                     <!-- Inicio todas las Publicaciones-->
                     <div id="publicaciones">
-
-
 
                     @if(isset($datos))
 
@@ -1028,11 +1014,7 @@
 
                               <div class="col-auto">
 
-                                <div class="d-flex justify-content-center">
-                                  <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="default">Tweet</a>
-        
-                                  <div class="fb-share-button" data-href="http://solucionesbestoffice.com/Colorear-con-BestOffice" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsolucionesbestoffice.com%2FColorear-con-BestOffice%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartir</a></div>                                                    
-                                </div>
+
                               
                               </div>
                             </div> 
