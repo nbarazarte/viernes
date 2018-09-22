@@ -191,7 +191,6 @@
 
           <div class="col-12 col-xl-4">
 
-
               <div class="card-header">
                 <div class="row align-items-center">
                   <div class="col">
@@ -363,7 +362,7 @@
 
                           <div id="motos" class="tab-pane fade ">
 
-                            <!-- Taxis -->
+                            <!-- Motos Taxis -->
                             <div class="card" data-toggle="lists" data-lists-values='["orders-order", "orders-product"]'>
                               <div class="card-header">
                                 <div class="row align-items-center">
@@ -623,9 +622,248 @@
 
                   </div>
               </div>
-            </section>
+            </section>              
 
-            <!-- Eventos -->
+          </div>
+
+          <!-- Time Line -->
+          <div class="col-12 col-xl-5">
+                        
+            <div class="card">
+              <div class="card-body">
+                       
+              @guest
+                <div id="btnpmp"></div>
+              @else
+
+
+                <div class="mb-3">
+
+                  <div class="row align-items-center">
+
+                    <div class="col-auto">
+                      
+                      <a href="#!" class="avatar">                       
+
+                        @if(empty(Auth::user()->avatar))
+                          
+                          <img src="templateDashkit/assets/img/avatars/profiles/user.png" alt="Avatar" alt="..." class="avatar-img rounded-circle">
+                          
+                        @else
+
+                          <img src="{{ Auth::user()->avatar }}" alt="Avatar" alt="..." class="avatar-img rounded-circle">
+
+                        @endif                        
+
+                      </a>
+
+                    </div>
+
+                    <div class="col ml--2">
+
+                        <!-- Title -->
+                        <h4 class="card-header-title">
+
+                          <select id="categorias" name="categorias" class="form-control form-control-sm" data-toggle="select">
+                            <option>Filtrar por Categorías</option>
+                            <option>Hogar</option>
+                            <option>Educación</option>
+                            <option>Noticias</option>
+                            <option>Servicios</option>
+                            <option>Política</option>
+                            <option>Deportes</option>
+                            <option>Religión</option>
+                            <option>Economía</option>
+                            <option>Moda</option>
+                            <option>Mascotas</option>
+                            <option>Salud</option>
+                            <option>Sexo</option>
+                            <option>Ninguna</option>
+                          </select>
+                        </h4>            
+                           
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="mb-3">
+
+                  <div class="row align-items-center">
+
+                    <div class="col-auto">
+                      
+                    </div>
+
+                    <div class="col ml--2">
+
+                        <textarea id="txt_descripcion" name="txt_descripcion" class="form-control" placeholder="Di lo que quieras..." rows="4" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></textarea>
+                        <input type="hidden" id="lng_idusuario" name="lng_idusuario" value="{{ Auth::user()->id }}" readonly="yes">
+                        <input type="hidden" id="usuario" name="usuario" value="{{ Auth::user()->name }}" readonly="yes">                        
+                        <input type="hidden" id="str_correo" name="str_corro" value="{{ Auth::user()->email }}" readonly="yes">
+                        <input type="hidden" id="str_fecha_publicacion" name="str_fecha_publicacion" value="{{ date('d/m/Y') }}" readonly="yes"> 
+                        <input type="hidden" id="avatar_usuario" name="avatar_usuario" value="{{ Auth::user()->avatar }}" readonly="yes">               
+                           
+                    </div>
+                            
+                  </div>
+
+                </div>
+
+                <div class="collapse" id="collapseExample">
+                  <div class="card card-body">    
+                    <div class="d-flex justify-content-center">
+
+                      <div class="custom-file">
+                        <input type="file" id="str_ruta" name="str_ruta" class="custom-file-input" id="customFile" lang="es">
+                        <label class="custom-file-label" for="customFile">
+                          Añadir
+                          <span class="fe fe-image" title="foto"></span>
+                          <span class="fe fe-film" title="video"></span>
+                        </label>
+                      </div>
+                                          
+                    </div> 
+
+                    <br>
+
+                    <button id="btnpmp" type="button" class="btn btn-rounded btn-primary btn-sm" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Publicar</button>
+
+                  </div>
+                </div>
+
+                <hr>
+                @endguest
+
+                    <!-- Inicio Nueva Publicación-->
+
+                    <div id="msjNuevaspublicaciones" class="">
+                      <div class="alert alert-warning alert-dismissible fade show d-flex justify-content-center" role="alert">
+                        
+                        Hay&nbsp;<b id="contNuevaspublicaciones"> </b> <a id="leerMsj" href="#!">&nbsp;leer</a>
+      
+                      </div>
+                    </div>
+                  
+                    <!-- Inicio todas las Publicaciones-->
+                    <div id="publicaciones">
+
+                    @if(isset($datos))
+
+                      @foreach(array_reverse($datos) as $dato)
+
+                          <div class="mb-3">
+                            <div class="row align-items-center">
+                              <div class="col-auto">
+                                
+                                <a href="#!" class="avatar">
+
+                                   @if(empty($dato['avatar_usuario']))
+
+                                    <img src="templateDashkit/assets/img/avatars/profiles/user.png" alt="Avatar" class="avatar-img rounded-circle">
+
+                                  @else
+
+                                     <img src="{{ $dato['avatar_usuario'] }}" alt="Avatar" class="avatar-img rounded-circle">
+
+                                  @endif 
+
+                                </a>
+
+                              </div>
+                              <div class="col ml--2">
+
+                                <h4 class="card-title mb-1">
+                                  {{ $dato['usuario']  }}
+                                </h4>
+
+                                <p class="card-text small text-muted">
+                                  <span class="badge badge-light"> {{ $dato['str_categoria'] }}</span>
+                                  <span class="fe fe-calendar"></span>
+                                  {{ $dato['str_fecha_publicacion'] }} 
+                                  
+                                  <span class="fe fe-clock"></span>
+                                    {{ $dato['str_hora'] }}
+                                </p> 
+                                
+                              </div>
+                              <div class="col-auto">
+                                
+                                <div class="dropdown">
+                                  <a href="#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fe fe-more-vertical"></i>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="#!" class="dropdown-item">
+                                      Action
+                                    </a>
+                                  </div>
+                                </div>
+                                
+                              </div>
+                            </div>
+                          </div>
+
+                          <p class="mb-3" style="text-align: justify;">
+                            {{ $dato['txt_descripcion']  }}
+                          </p>                          
+                            
+                            @if( !empty($dato['str_ruta'] ))
+
+                              <!--
+                                <p class="text-center mb-3">
+                                  <img src="{{ $dato['str_ruta'] }}" alt="..." class="img-fluid rounded">
+                                </p>
+                              -->
+
+                              <p class="text-center mb-3">
+                                <img src="templateDashkit/assets/img/posts/post-1.jpg" alt="..." class="img-fluid rounded">
+                              </p>                             
+
+                            @endif
+
+                          <div class="mb-3">
+                            <div class="row">
+                              <div class="col">
+
+                                <a href="#!" class="btn btn-sm btn-white">
+                                  <i class="far fa-smile"></i> 1
+                                </a>
+
+                                <a href="#!" class="btn btn-sm btn-white">
+                                  <i class="far fa-angry"></i> 0
+                                </a>                                
+
+                              </div>
+
+                              <div class="col-auto">
+
+
+                              
+                              </div>
+                            </div> 
+                          </div>
+
+                          <hr>
+
+                        @endforeach
+
+                      @endif
+
+
+                    </div>
+                    <!-- Fin Nueva Publicación-->
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Eventos -->
+          <div class="col-12 col-xl-3">
+
             <div class="card">
               <div class="card-header">
                 <div class="row align-items-center">
@@ -633,7 +871,7 @@
                     
                     <!-- Title -->
                     <h4 class="card-header-title">
-                      Eventos de hoy
+                      Eventos para hoy
                     </h4>
 
                   </div>
@@ -837,365 +1075,7 @@
                 </div> <!-- / .row -->
 
               </div> <!-- / .card-body -->
-            </div> <!-- / .card -->                  
-
-          </div>
-
-          <!-- Time Line -->
-          <div class="col-12 col-xl-6">
-                        
-            <div class="card">
-              <div class="card-body">
-                       
-              @guest
-                <div id="btnpmp"></div>
-              @else
-
-                <div class="mb-3">
-                  <div class="row align-items-center">
-                    <div class="col-auto">
-                      
-                      <a href="#!" class="avatar">                       
-
-                        @if(empty(Auth::user()->avatar))
-                          
-                          <img src="templateDashkit/assets/img/avatars/profiles/user.png" alt="Avatar" alt="..." class="avatar-img rounded-circle">
-                          
-                        @else
-
-                          <img src="{{ Auth::user()->avatar }}" alt="Avatar" alt="..." class="avatar-img rounded-circle">
-
-                        @endif                        
-
-                      </a>
-
-                    </div>
-
-                    <div class="col ml--2">
-
-                      <?php
-                                          
-                        setlocale(LC_TIME, 'es_VE', 'es_VE.utf-8', 'es_VE.utf8'); 
-                        date_default_timezone_set('America/Caracas');
-                        $tiempo = strftime("%X");
-
-                      ?>                      
-
-                        <textarea id="txt_descripcion" name="txt_descripcion" class="form-control" placeholder="Di lo que quieras..." rows="4" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></textarea>
-                        <input type="hidden" id="lng_idusuario" name="lng_idusuario" value="{{ Auth::user()->id }}" readonly="yes">
-                        <input type="hidden" id="usuario" name="usuario" value="{{ Auth::user()->name }}" readonly="yes">                        
-                        <input type="hidden" id="str_correo" name="str_corro" value="{{ Auth::user()->email }}" readonly="yes">
-                        <input type="hidden" id="str_fecha_publicacion" name="str_fecha_publicacion" value="{{ date('d/m/Y') }}" readonly="yes"> 
-                        <input type="hidden" id="avatar_usuario" name="avatar_usuario" value="{{ Auth::user()->avatar }}" readonly="yes">               
-                        <input type="hidden" id="str_categoria" name="str_categoria" value="ninguna" readonly="yes">
-                         
-                    </div>
-
-                    <div class="col-auto">
-
-                      <div class="d-flex justify-content-center">
-                        <button id="btnpmp" type="button" class="btn btn-rounded btn-primary btn-sm">Publicar</button>
-                      </div>                                            
-                      
-                    </div>
-                  </div>
-                </div>
-
-                <div class="collapse" id="collapseExample">
-                  <div class="card card-body">
-                    <input type="file" class="form-control-file form-control-sm" id="str_ruta" name="str_ruta" aria-describedby="" required>
-                  </div>
-                </div>
-
-                <hr>
-                @endguest
-
-                    <!-- Inicio Nueva Publicación-->
-
-                    <div id="msjNuevaspublicaciones" class="">
-                      <div class="alert alert-warning alert-dismissible fade show d-flex justify-content-center" role="alert">
-                        
-                        Hay&nbsp;<b id="contNuevaspublicaciones"> </b> <a id="leerMsj" href="#!">&nbsp;leer</a>
-      
-                      </div>
-                    </div>
-                  
-                    <!-- Inicio todas las Publicaciones-->
-                    <div id="publicaciones">
-
-                    @if(isset($datos))
-
-                      @foreach(array_reverse($datos) as $dato)
-
-                          <div class="mb-3">
-                            <div class="row align-items-center">
-                              <div class="col-auto">
-                                
-                                <a href="#!" class="avatar">
-
-                                   @if(empty($dato['avatar_usuario']))
-
-                                    <img src="templateDashkit/assets/img/avatars/profiles/user.png" alt="Avatar" class="avatar-img rounded-circle">
-
-                                  @else
-
-                                     <img src="{{ $dato['avatar_usuario'] }}" alt="Avatar" class="avatar-img rounded-circle">
-
-                                  @endif 
-
-                                </a>
-
-                              </div>
-                              <div class="col ml--2">
-
-                                <h4 class="card-title mb-1">
-                                  {{ $dato['usuario']  }}
-                                </h4>
-
-                                <div class="card-text small text-muted">
-                                  <span class="fe fe-calendar"></span> 
-                                  
-                                  {{ $dato['str_fecha_publicacion'] }} 
-                                  
-                                  <span class="fe fe-clock"></span> 
-                                  {{ $dato['str_hora'] }}
-                                  
-                                </div>
-                                
-                              </div>
-                              <div class="col-auto">
-                                
-                                <div class="dropdown">
-                                  <a href="#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="fe fe-more-vertical"></i>
-                                  </a>
-                                  <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="#!" class="dropdown-item">
-                                      Action
-                                    </a>
-                                  </div>
-                                </div>
-                                
-                              </div>
-                            </div>
-                          </div>
-
-                          <p class="mb-3" style="text-align: justify;">
-                            {{ $dato['txt_descripcion']  }}
-                          </p>                          
-                            
-                            @if( !empty($dato['str_ruta'] ))
-
-                              <!--
-                                <p class="text-center mb-3">
-                                  <img src="{{ $dato['str_ruta'] }}" alt="..." class="img-fluid rounded">
-                                </p>
-                              -->
-
-                              <p class="text-center mb-3">
-                                <img src="templateDashkit/assets/img/posts/post-1.jpg" alt="..." class="img-fluid rounded">
-                              </p>                             
-
-                            @endif
-
-                          <div class="mb-3">
-                            <div class="row">
-                              <div class="col">
-
-                                <a href="#!" class="btn btn-sm btn-white">
-                                  <i class="far fa-smile"></i> 1
-                                </a>
-
-                                <a href="#!" class="btn btn-sm btn-white">
-                                  <i class="far fa-angry"></i> 0
-                                </a>                                
-
-                              </div>
-
-                              <div class="col-auto">
-
-
-                              
-                              </div>
-                            </div> 
-                          </div>
-
-                          <hr>
-
-                        @endforeach
-
-                      @endif
-
-
-                    </div>
-                    <!-- Fin Nueva Publicación-->
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <!-- Categorías -->
-          <div class="col-12 col-xl-2">
-                        
-            <div class="card">
-              <div class="card-body">
-
-                <h2>Filtrar por:</h2>
-
-                <div class="row align-items-center">
-                  <div class="col">
-                    
-                    <!-- Title -->
-  
-                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Servicios <small class="text-muted">
-                     <span class="badge badge-dark" style="background-color: #386f00">793</span>
-                    </small></button>
-
-                  </div>
-
-                </div> <!-- / .row -->
-
-                <!-- Divider -->
-                <hr>
-
-                <div class="row align-items-center">
-                  <div class="col">
-                    
-                    <!-- Title -->
-                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Variedades <small class="text-muted">
-                     <span class="badge badge-dark" style="background-color: #4a0093">793</span>
-                    </small></button>
-
-                  </div>
-
-                </div> <!-- / .row -->
-
-                <hr>
-
-                <div class="row align-items-center">
-                  <div class="col">
-                    
-                   <!-- Title -->
-                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Política <small class="text-muted">
-                     <span class="badge badge-warning">793</span>
-                    </small></button>
-
-                  </div>
-
-                </div> <!-- / .row -->
-
-                <!-- Divider -->
-                <hr>   
-
-                <div class="row align-items-center">
-                  <div class="col">
-                    
-                    <!-- Title -->
-                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Deportes <small class="text-muted">
-                     <span class="badge badge-secondary">793</span>
-                    </small></button>
-
-                  </div>
-
-                </div> <!-- / .row -->
-
-                <!-- Divider -->
-                <hr>
-
-                <div class="row align-items-center">
-                  <div class="col">
-                    
-                    <!-- Title -->
-                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Religión <small class="text-muted">
-                     <span class="badge badge-dark" style="background-color: #ff6c6c">793</span>
-                    </small></button>
-
-                  </div>
-
-                </div> <!-- / .row -->
-
-                <!-- Divider -->
-                <hr>                 
-                
-                <div class="row align-items-center">
-                  <div class="col">
-                    
-                    <!-- Title -->
-                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Economía <small class="text-muted">
-                     <span class="badge badge-info">793</span>
-                    </small></button>
-
-                  </div>
-
-                </div> <!-- / .row -->
-
-                <!-- Divider -->
-                <hr>
-
-                <div class="row align-items-center">
-                  <div class="col">
-                    
-                    <!-- Title -->
-                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Moda <small class="text-muted">
-                     <span class="badge badge-dark" style="background-color: #ff2492">793</span>
-                    </small></button>
-
-                  </div>
-
-                </div> <!-- / .row -->
-
-                <!-- Divider -->
-                <hr> 
-
-                <div class="row align-items-center">
-                  <div class="col">
-                    
-                    <!-- Title -->
-                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Mascotas <small class="text-muted">
-                     <span class="badge badge-dark" style="background-color: #2424ff">793</span>
-                    </small></button>
-
-                  </div>
-
-                </div> <!-- / .row -->
-
-                <!-- Divider -->
-                <hr>
-
-                <div class="row align-items-center">
-                  <div class="col">
-                    
-                    <!-- Title -->
-                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Salud <small class="text-muted">
-                     <span class="badge badge-success">793</span>
-                    </small></button>
-
-                  </div>
-
-                </div> <!-- / .row -->
-
-                <!-- Divider -->
-                <hr>
-
-                <div class="row align-items-center">
-                  <div class="col">
-                    
-                    <!-- Title -->
-                    <button type="button" class="btn btn-outline-secondary btn-sm btn-block">Sexo <small class="text-muted">
-                     <span class="badge badge-dark" style="background-color: red">793</span>
-                    </small></button>
-
-                  </div>
-
-                </div> <!-- / .row -->
-
-                <!-- Divider -->
-                <hr>                                                                                                            
-
-              </div>
-            </div>
+            </div> <!-- / .card -->        
 
           </div>
 

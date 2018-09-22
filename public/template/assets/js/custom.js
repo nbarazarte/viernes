@@ -33,14 +33,29 @@ function pmp(){//publicar
   var horas = d.getHours();
   var minutos = d.getMinutes();
   var segundos = d.getSeconds();
+
+  if (minutos < 10) {
+    minutos = "0"+minutos;
+  }
+
+  if (segundos < 10) {
+    segundos = "0"+segundos;
+  }  
+
   var hora = horas+":"+minutos+":"+segundos;
+
+  var categoria = document.getElementById('categorias').options[document.getElementById('categorias').selectedIndex].text;
+
+  if(categoria == "Filtrar por Categorías"){
+    categoria = "Ninguna"
+  }
 
   var data = {
 
+    str_categoria: categoria,
     txt_descripcion: document.getElementById('txt_descripcion').value,
     lng_idusuario: document.getElementById('lng_idusuario').value,
-    usuario: document.getElementById('usuario').value,
-    str_categoria: document.getElementById('str_categoria').value,    
+    usuario: document.getElementById('usuario').value,  
     str_correo: document.getElementById('str_correo').value,    
     str_fecha_publicacion: document.getElementById('str_fecha_publicacion').value, 
     avatar_usuario: document.getElementById('avatar_usuario').value,     
@@ -52,9 +67,11 @@ function pmp(){//publicar
   ref.push(data);
 
   document.getElementById('txt_descripcion').value = "";
-  document.getElementById('str_ruta').value = "";
-}
+  document.getElementById('str_ruta').value = "";  
+  document.getElementById('categorias').selectedIndex = 0;
+  document.getElementById('select2-categorias-container').innerHTML = document.getElementById('categorias').options[document.getElementById('categorias').selectedIndex].text;
 
+}
 
 function gotData(data){
 
@@ -198,7 +215,7 @@ function recorrerTimeline(timelineArray) {
     elementos +=                                  element['usuario'];
     elementos +='                                </h4>';
     elementos +='                                <p class="card-text small text-muted">';
-    elementos +='                                  <span class="fe fe-calendar"></span>' + ' ' +element['str_fecha_publicacion'] + ' ' +'<span class="fe fe-clock"></span>' + ' ' +element['str_hora'];
+    elementos +='                                  <span class="badge badge-light">'+element['str_categoria']+'</span> <span class="fe fe-calendar"></span>' + ' ' +element['str_fecha_publicacion'] + ' ' +'<span class="fe fe-clock"></span>' + ' ' +element['str_hora'];
     elementos +='                                </p>';
     elementos +='                              </div>';
     elementos +='                              <div class="col-auto">';
