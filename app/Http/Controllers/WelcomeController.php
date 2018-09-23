@@ -22,7 +22,7 @@ protected $database;
     {
         // This assumes that you have placed the Firebase credentials in the same directory
         // as this PHP file.
-        $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/../../../home4pets-82b57-b61eafc1ad8f.json');
+        $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/../../../guauser-b34cf-136f3dce5a19.json');
         $firebase = (new Factory)->withServiceAccount($serviceAccount)->create();
         $this->database = $firebase->getDatabase();
 

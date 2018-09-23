@@ -1,11 +1,11 @@
-  // Initialize Firebase
+   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyASsoaJ07fjaa5w4WqAf5cokq4EDo-CtYY",
-    authDomain: "home4pets-82b57.firebaseapp.com",
-    databaseURL: "https://home4pets-82b57.firebaseio.com",
-    projectId: "home4pets-82b57",
-    storageBucket: "home4pets-82b57.appspot.com",
-    messagingSenderId: "988879338473"
+    apiKey: "AIzaSyCBiTzsclQXinCB02WndDyQY31OWWcLmSU",
+    authDomain: "guauser-b34cf.firebaseapp.com",
+    databaseURL: "https://guauser-b34cf.firebaseio.com",
+    projectId: "guauser-b34cf",
+    storageBucket: "guauser-b34cf.appspot.com",
+    messagingSenderId: "392674517259"
   };
   firebase.initializeApp(config);
 
