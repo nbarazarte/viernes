@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 13-09-2018 a las 02:17:10
+-- Tiempo de generación: 23-09-2018 a las 15:21:50
 -- Versión del servidor: 10.1.26-MariaDB-0+deb9u1
 -- Versión de PHP: 7.0.30-0+deb9u1
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `chef4pets`
+-- Base de datos: `guauser`
 --
 
 -- --------------------------------------------------------
@@ -40,7 +40,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2018_08_24_035604_create_subscriptions_table', 1),
-(4, '2018_08_26_214419_update_user_table', 1);
+(4, '2018_08_26_214419_update_user_table', 1),
+(5, '2018_09_13_060354_create_tbl_mascotas_perdidas_table', 2);
 
 -- --------------------------------------------------------
 
@@ -76,6 +77,32 @@ CREATE TABLE `subscriptions` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tbl_mascotasPerdidas`
+--
+
+CREATE TABLE `tbl_mascotasPerdidas` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `lng_idusuario` int(11) NOT NULL,
+  `str_dueno` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `str_telefono` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `str_correo` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `str_mascota` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `str_especie` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `str_ruta_foto` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `str_ciudad` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `str_sector` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `str_fecha_perdida` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `txt_descripcion` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `str_estatus_mascota` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'perdida',
+  `str_estatus_publicacion` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'revision',
+  `bol_eliminado` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `users`
 --
 
@@ -103,9 +130,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `gender`, `provider`, `provider_id`, `avatar`, `stripe_id`, `card_brand`, `card_last_four`, `trial_ends_at`, `remember_token`, `created_at`, `updated_at`, `customer_id`) VALUES
-(1, 'Neil Ezequiel Barazarte Aché', 'atrellus@gmail.com', '$2y$10$s15wrkgCp5eQniVn.jbdCONmUGACjyaGEz1ckaq1rnsYaAoTiA.2W', NULL, 'facebook', '10217415051026898', 'https://graph.facebook.com/v3.0/10217415051026898/picture?type=normal', NULL, 'Visa', '4242', NULL, 'vzcVE9EgrdcDprOKRCyLnBemOZyf5u84PCPv7nGWWhBfRmbjpfEBF4djudKh', '2018-08-27 05:13:44', '2018-08-27 05:13:44', 'cus_DUYPGv3Ofzer57'),
-(2, 'ezequiel barazarte', 'ezebarazarte@gmail.com', '$2y$10$R8f6leCW8dPZQxu9kkBUhe35RvW2EGqj1JbFC0i7nuaITOnge5JUq', NULL, 'google', '110534125577808178269', 'https://lh4.googleusercontent.com/-r-jRuY64hys/AAAAAAAAAAI/AAAAAAAAAP0/Of2TF8nKmts/photo.jpg?sz=50', NULL, 'Visa', '4242', NULL, 'CurKxVKUWQKhrzxbHlMzcDgHxMc1rDV4jpLfydb5imr5r452cP73cgMHJjMX', '2018-08-27 05:15:40', '2018-08-27 05:15:40', 'cus_DUYTY4JjHRObtG'),
-(3, 'hotel hippocampus', 'hippocampusclubhotel@gmail.com', '$2y$10$JiSlTRVexPP5zH0VkvEE.Oi96Ql6T/Ceyw7fCeCTHr4G1hqg1lpya', NULL, 'google', '106869505826834467478', 'https://lh3.googleusercontent.com/-cXu30rvP2KE/AAAAAAAAAAI/AAAAAAAAAAc/G618fi3_bN4/photo.jpg?sz=50', NULL, NULL, NULL, NULL, 'lwONWxGvHI1A6njDqG4ioFhom9LzpTEIvihPUXafDqDDkKIa89Frv92E8qs0', '2018-09-12 19:57:34', '2018-09-12 19:57:34', NULL);
+(1, 'ezequiel barazarte', 'ezebarazarte@gmail.com', '$2y$10$tXmOB5rLDCUK6Z1QKWcOAOXbBHnLkPY48VMHKrYe/ynkzmEhCvluG', NULL, 'google', '110534125577808178269', 'https://lh4.googleusercontent.com/-r-jRuY64hys/AAAAAAAAAAI/AAAAAAAAAP0/Of2TF8nKmts/photo.jpg?sz=50', NULL, 'Visa', '4242', NULL, 'fx7zoUjg6BBOuVa0oitzmOWy7AM915prxBI43aIreDWLEPOJV9sm92JqQtuz', '2018-09-15 10:27:19', '2018-09-15 10:27:19', 'cus_DbwO4fxwuDEqqb'),
+(2, 'Neil Ezequiel Barazarte Aché', 'atrellus@gmail.com', '$2y$10$hnKPewyVtrJu/zDzKRGOw.PrIfxrVya4OLgSFa4c53NkfJQcPP5sy', NULL, 'facebook', '10217415051026898', 'https://graph.facebook.com/v3.0/10217415051026898/picture?type=normal', NULL, 'Visa', '4242', NULL, 'ky3ddZA54E5FsFiKPlvRo7qibUaweSEZJVYqutSeV2IHibvVFH5XoAWJ5P2b', '2018-09-15 10:28:35', '2018-09-15 10:28:35', 'cus_DbwQztGpU778IR'),
+(3, 'hotel hippocampus', 'hippocampusclubhotel@gmail.com', '$2y$10$dvgjcNvG9lH0d7bS/9VNJ.tsNfVEOw.YD385dEMLQic3X4Wzn2sfy', NULL, 'google', '106869505826834467478', 'https://lh3.googleusercontent.com/-cXu30rvP2KE/AAAAAAAAAAI/AAAAAAAAAAc/G618fi3_bN4/photo.jpg?sz=50', NULL, NULL, NULL, NULL, 'WX3C2oeEAdMvtvc8un4euzmYTBjj2BXxIrz88MNHParq6f0eCXl3KgoOcmWF', '2018-09-17 20:57:43', '2018-09-17 20:57:43', NULL),
+(4, 'maritza aché', 'maritzaache@gmail.com', '$2y$10$iq6RWrfTFneqU4.hhOSV2.ng/VrCkivEAyaJQ.1X3VA.qi54ae8ca', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'HphAlmjo2RPKopOSTKlN8eN0vDW42byo5vSdh66WPiBKj0CsNZrR5Leu3ivl', '2018-09-17 20:58:33', '2018-09-17 20:58:33', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -130,6 +158,12 @@ ALTER TABLE `subscriptions`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `tbl_mascotasPerdidas`
+--
+ALTER TABLE `tbl_mascotasPerdidas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
@@ -144,17 +178,22 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `subscriptions`
 --
 ALTER TABLE `subscriptions`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT de la tabla `tbl_mascotasPerdidas`
+--
+ALTER TABLE `tbl_mascotasPerdidas`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
