@@ -59,7 +59,7 @@
               <ul class="navbar-nav align-items-center mr-0">
                 <li>
                   <a class="nav-link" href="{{ route('login')}}" >
-                    Iniciar Sesión <i class="fas fa-paw fs-22"></i>
+                    Iniciar Sesión
                   </a>
 
                 </li>

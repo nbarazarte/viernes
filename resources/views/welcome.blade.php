@@ -630,6 +630,11 @@
                        
               @guest
                 <div id="btnpmp"></div>
+                <div id="cargando">
+                  <div class="d-flex justify-content-center">
+                    <div class="loader loader-primary"></div>
+                  </div>
+                </div>
               @else
 
 
