@@ -217,413 +217,409 @@
 
                 </div> <!-- / .row -->
               </div>
-            
-            <section class="container">
-              <div class="row">
-                  <div class="">
                       
-                      <ul id="tabsJustified" class="nav nav-tabs">
-                          <li class="nav-item"><a href="" data-target="#home1" data-toggle="tab" class="nav-link small text-uppercase active">Taxis</a></li>
-                          <li class="nav-item"><a href="" data-target="#motos" data-toggle="tab" class="nav-link small text-uppercase ">Moto Taxis</a></li>                          
-                          <li class="nav-item"><a href="" data-target="#profile1" data-toggle="tab" class="nav-link small text-uppercase ">Hoteles</a></li>
-                      </ul>
-                      <br>
+            <div class="card">
+                                      
+              <ul id="tabsJustified" class="nav nav-tabs">
+                  <li class="nav-item"><a href="" data-target="#home1" data-toggle="tab" class="nav-link small text-uppercase active">Taxis</a></li>
+                  <li class="nav-item"><a href="" data-target="#motos" data-toggle="tab" class="nav-link small text-uppercase ">Moto Taxis</a></li>                          
+                  <li class="nav-item"><a href="" data-target="#profile1" data-toggle="tab" class="nav-link small text-uppercase ">Hoteles</a></li>
+              </ul>
+              <br>
 
-                      <div id="tabsJustifiedContent" class="tab-content">
+              <div id="tabsJustifiedContent" class="tab-content">
 
-                          <div id="home1" class="tab-pane fade active show">
+                  <div id="home1" class="tab-pane fade active show">
 
-                            <!-- Taxis -->
-                            <div class="card" data-toggle="lists" data-lists-values='["orders-order", "orders-product"]'>
-                              <div class="card-header">
-                                <div class="row align-items-center">
-                                  <div class="col">
+                    <!-- Taxis -->
+                    <div class="card" data-toggle="lists" data-lists-values='["orders-order", "orders-product"]'>
+                      <div class="card-header">
+                        <div class="row align-items-center">
+                          <div class="col">
 
-                                    <!-- Search -->
-                                    <form class="row align-items-center">
-                                      <div class="col-auto pr-0">
-                                        <span class="fe fe-search text-muted"></span>
-                                      </div>
-                                      <div class="col">
-                                          <input type="search" class="form-control form-control-flush search" placeholder="Buscar Taxi">
-                                      </div>
-                                    </form>
-                                    
-                                  </div>
-
-                                </div> <!-- / .row -->
+                            <!-- Search -->
+                            <form class="row align-items-center">
+                              <div class="col-auto pr-0">
+                                <span class="fe fe-search text-muted"></span>
                               </div>
-                              <div class="table-responsive">
-                                <table class="table table-sm table-nowrap card-table">
-                                  <thead>
-                                    <tr>
-
-                                      <th>
-                                        <a href="orders.html#" class="text-muted sort" data-sort="orders-order">
-                                          Nombre
-                                        </a>
-                                      </th>
-                                      <th>
-                                        <a href="orders.html#" class="text-muted sort" data-sort="orders-product">
-                                          Estado
-                                        </a>
-                                      </th>
-                                    </tr>
-                                  </thead>
-
-                                  <tbody class="list">
-                                    <tr>
-                                      <td class="orders-order">
-                                        <div class="avatar-group">
-                                          <a href="#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
-                                            <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
-                                          </a>
-                                          Jaennie Pineda
-                                        </div>
-                                      </td>
-                                      <td class="orders-product">
-                                        <span class="text-success">●</span> Disponible
-                                      </td>                      
-                                      <td class="text-right">
-                                        <div class="dropdown">
-                                          <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe fe-more-vertical"></i>
-                                          </a>
-                                          <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="orders.html#!" class="dropdown-item">
-                                              Contactar
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                                                                                                               
-                                    <tr>
-                                      <td class="orders-order">
-                                        <div class="avatar-group justify-content-end">
-                                          <a href="#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
-                                            <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
-                                          </a>
-                                          Rosciel Granadillo
-                                        </div>
-                                      </td>
-                                      <td class="orders-product">
-                                        <span class="text-danger">●</span> Ocupado
-                                      </td>
-
-                                      <td class="text-right">
-                                        <div class="dropdown">
-                                          <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe fe-more-vertical"></i>
-                                          </a>
-                                          <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="orders.html#!" class="dropdown-item">
-                                              Contactar
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </td>
-                                    </tr>
-
-                                    <tr>
-                                      <td class="orders-order">
-                                        <div class="avatar-group justify-content-end">
-                                          <a href="#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
-                                            <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
-                                          </a>
-                                          Angela Pérez
-                                        </div>
-                                      </td>
-                                      <td class="orders-product">
-                                        <span class="text-danger">●</span> Ocupado
-                                      </td>
-
-                                      <td class="text-right">
-                                        <div class="dropdown">
-                                          <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe fe-more-vertical"></i>
-                                          </a>
-                                          <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="orders.html#!" class="dropdown-item">
-                                              Contactar
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </td>
-                                    </tr>
-
-
-                                  </tbody>
-                                </table>
+                              <div class="col">
+                                  <input type="search" class="form-control form-control-flush search" placeholder="Buscar Taxi">
                               </div>
-                            </div> 
-
+                            </form>
+                            
                           </div>
 
-                          <div id="motos" class="tab-pane fade ">
-
-                            <!-- Motos Taxis -->
-                            <div class="card" data-toggle="lists" data-lists-values='["orders-order", "orders-product"]'>
-                              <div class="card-header">
-                                <div class="row align-items-center">
-                                  <div class="col">
-
-                                    <!-- Search -->
-                                    <form class="row align-items-center">
-                                      <div class="col-auto pr-0">
-                                        <span class="fe fe-search text-muted"></span>
-                                      </div>
-                                      <div class="col">
-                                          <input type="search" class="form-control form-control-flush search" placeholder="Buscar Moto Taxi">
-                                      </div>
-                                    </form>
-                                    
-                                  </div>
-
-                                </div> <!-- / .row -->
-                              </div>
-                              <div class="table-responsive">
-                                <table class="table table-sm table-nowrap card-table">
-                                  <thead>
-                                    <tr>
-
-                                      <th>
-                                        <a href="orders.html#" class="text-muted sort" data-sort="orders-order">
-                                          Nombre
-                                        </a>
-                                      </th>
-                                      <th>
-                                        <a href="orders.html#" class="text-muted sort" data-sort="orders-product">
-                                          Estado
-                                        </a>
-                                      </th>
-                                    </tr>
-                                  </thead>
-
-                                  <tbody class="list">
-                                    <tr>
-                                      <td class="orders-order">
-                                        <div class="avatar-group">
-                                          <a href="#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
-                                            <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
-                                          </a>
-                                          Raúl Pérez
-                                        </div>
-                                      </td>
-                                      <td class="orders-product">
-                                        <span class="text-success">●</span> Disponible
-                                      </td>                      
-                                      <td class="text-right">
-                                        <div class="dropdown">
-                                          <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe fe-more-vertical"></i>
-                                          </a>
-                                          <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="orders.html#!" class="dropdown-item">
-                                              Contactar
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                                                                                                               
-                                    <tr>
-                                      <td class="orders-order">
-                                        <div class="avatar-group justify-content-end">
-                                          <a href="#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
-                                            <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
-                                          </a>
-                                          Yeferson García
-                                        </div>
-                                      </td>
-                                      <td class="orders-product">
-                                        <span class="text-success">●</span> Disponible
-                                      </td>
-
-                                      <td class="text-right">
-                                        <div class="dropdown">
-                                          <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe fe-more-vertical"></i>
-                                          </a>
-                                          <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="orders.html#!" class="dropdown-item">
-                                              Contactar
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </td>
-                                    </tr>
-
-                                    <tr>
-                                      <td class="orders-order">
-                                        <div class="avatar-group justify-content-end">
-                                          <a href="#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
-                                            <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
-                                          </a>
-                                          Carlos Gonzáles
-                                        </div>
-                                      </td>
-                                      <td class="orders-product">
-                                        <span class="text-danger">●</span> Ocupado
-                                      </td>
-
-                                      <td class="text-right">
-                                        <div class="dropdown">
-                                          <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe fe-more-vertical"></i>
-                                          </a>
-                                          <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="orders.html#!" class="dropdown-item">
-                                              Contactar
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </td>
-                                    </tr>
-
-
-                                  </tbody>
-                                </table>
-                              </div>
-                            </div> 
-
-                          </div>                          
-
-                          <div id="profile1" class="tab-pane fade  ">
-
-                            <!-- Hoteles -->
-                            <div class="card" data-toggle="lists" data-lists-values='["orders-order", "orders-product"]'>
-                              <div class="card-header">
-                                <div class="row align-items-center">
-                                  <div class="col">
-
-                                    <!-- Search -->
-                                    <form class="row align-items-center">
-                                      <div class="col-auto pr-0">
-                                        <span class="fe fe-search text-muted"></span>
-                                      </div>
-                                      <div class="col">
-                                          <input type="search" class="form-control form-control-flush search" placeholder="Buscar hoteles">
-                                      </div>
-                                    </form>
-                                    
-                                  </div>
-
-                                </div> <!-- / .row -->
-                              </div>
-                              <div class="table-responsive">
-                                <table class="table table-sm table-nowrap card-table">
-                                  <thead>
-                                    <tr>
-
-                                      <th>
-                                        <a href="orders.html#" class="text-muted sort" data-sort="orders-order">
-                                          Hotel
-                                        </a>
-                                      </th>
-                                      <th>
-                                        <a href="orders.html#" class="text-muted sort" data-sort="orders-product">
-                                          Estado
-                                        </a>
-                                      </th>
-                                    </tr>
-                                  </thead>
-
-                                  <tbody class="list">
-                                    <tr>
-                                      <td class="orders-order">
-                                        <div class="avatar-group">
-                                          <a href="profile-posts.html" class="avatar avatar-xs" data-toggle="tooltip" title="">
-                                            <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
-                                          </a>
-                                          Hippocampus Vacation Club
-                                        </div>
-                                      </td>
-                                      <td class="orders-product">
-                                        <span class="text-success">●</span> Disponible
-                                      </td>                      
-                                      <td class="text-right">
-                                        <div class="dropdown">
-                                          <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe fe-more-vertical"></i>
-                                          </a>
-                                          <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="orders.html#!" class="dropdown-item">
-                                              Contactar
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                                                                                                               
-                                    <tr>
-                                      <td class="orders-order">
-                                        <div class="avatar-group justify-content-end">
-                                          <a href="dashboard-topnav.html#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
-                                            <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
-                                          </a>
-                                          Marriot
-                                        </div>
-                                      </td>
-                                      <td class="orders-product">
-                                        <span class="text-danger">●</span> Ocupado
-                                      </td>
-
-                                      <td class="text-right">
-                                        <div class="dropdown">
-                                          <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe fe-more-vertical"></i>
-                                          </a>
-                                          <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="orders.html#!" class="dropdown-item">
-                                              Contactar
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </td>
-                                    </tr>
-
-                                    <tr>
-                                      <td class="orders-order">
-                                        <div class="avatar-group justify-content-end">
-                                          <a href="dashboard-topnav.html#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
-                                            <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
-                                          </a>
-                                          Dallas
-                                        </div>
-                                      </td>
-                                      <td class="orders-product">
-                                        <span class="text-success">●</span> Disponible
-                                      </td>
-
-                                      <td class="text-right">
-                                        <div class="dropdown">
-                                          <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fe fe-more-vertical"></i>
-                                          </a>
-                                          <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="orders.html#!" class="dropdown-item">
-                                              Contactar
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </td>
-                                    </tr>
-
-
-                                  </tbody>
-                                </table>
-                              </div>
-                            </div> 
-
-                          </div>
-
+                        </div> <!-- / .row -->
                       </div>
+                      <div class="table-responsive">
+                        <table class="table table-sm table-nowrap card-table">
+                          <thead>
+                            <tr>
+
+                              <th>
+                                <a href="orders.html#" class="text-muted sort" data-sort="orders-order">
+                                  Nombre
+                                </a>
+                              </th>
+                              <th>
+                                <a href="orders.html#" class="text-muted sort" data-sort="orders-product">
+                                  Estado
+                                </a>
+                              </th>
+                            </tr>
+                          </thead>
+
+                          <tbody class="list">
+                            <tr>
+                              <td class="orders-order">
+                                <div class="avatar-group">
+                                  <a href="#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
+                                    <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                                  </a>
+                                  Jaennie Pineda
+                                </div>
+                              </td>
+                              <td class="orders-product">
+                                <span class="text-success">●</span> Disponible
+                              </td>                      
+                              <td class="text-right">
+                                <div class="dropdown">
+                                  <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fe fe-more-vertical"></i>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="orders.html#!" class="dropdown-item">
+                                      Contactar
+                                    </a>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                                                                                                                       
+                            <tr>
+                              <td class="orders-order">
+                                <div class="avatar-group justify-content-end">
+                                  <a href="#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
+                                    <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                                  </a>
+                                  Rosciel Granadillo
+                                </div>
+                              </td>
+                              <td class="orders-product">
+                                <span class="text-danger">●</span> Ocupado
+                              </td>
+
+                              <td class="text-right">
+                                <div class="dropdown">
+                                  <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fe fe-more-vertical"></i>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="orders.html#!" class="dropdown-item">
+                                      Contactar
+                                    </a>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="orders-order">
+                                <div class="avatar-group justify-content-end">
+                                  <a href="#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
+                                    <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                                  </a>
+                                  Angela Pérez
+                                </div>
+                              </td>
+                              <td class="orders-product">
+                                <span class="text-danger">●</span> Ocupado
+                              </td>
+
+                              <td class="text-right">
+                                <div class="dropdown">
+                                  <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fe fe-more-vertical"></i>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="orders.html#!" class="dropdown-item">
+                                      Contactar
+                                    </a>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div> 
 
                   </div>
-              </div>
-            </section>              
 
+                  <div id="motos" class="tab-pane fade ">
+
+                    <!-- Motos Taxis -->
+                    <div class="card" data-toggle="lists" data-lists-values='["orders-order", "orders-product"]'>
+                      <div class="card-header">
+                        <div class="row align-items-center">
+                          <div class="col">
+
+                            <!-- Search -->
+                            <form class="row align-items-center">
+                              <div class="col-auto pr-0">
+                                <span class="fe fe-search text-muted"></span>
+                              </div>
+                              <div class="col">
+                                  <input type="search" class="form-control form-control-flush search" placeholder="Buscar Moto Taxi">
+                              </div>
+                            </form>
+                            
+                          </div>
+
+                        </div> <!-- / .row -->
+                      </div>
+                      <div class="table-responsive">
+                        <table class="table table-sm table-nowrap card-table">
+                          <thead>
+                            <tr>
+
+                              <th>
+                                <a href="orders.html#" class="text-muted sort" data-sort="orders-order">
+                                  Nombre
+                                </a>
+                              </th>
+                              <th>
+                                <a href="orders.html#" class="text-muted sort" data-sort="orders-product">
+                                  Estado
+                                </a>
+                              </th>
+                            </tr>
+                          </thead>
+
+                          <tbody class="list">
+                            <tr>
+                              <td class="orders-order">
+                                <div class="avatar-group">
+                                  <a href="#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
+                                    <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                                  </a>
+                                  Raúl Pérez
+                                </div>
+                              </td>
+                              <td class="orders-product">
+                                <span class="text-success">●</span> Disponible
+                              </td>                      
+                              <td class="text-right">
+                                <div class="dropdown">
+                                  <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fe fe-more-vertical"></i>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="orders.html#!" class="dropdown-item">
+                                      Contactar
+                                    </a>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                                                                                                                       
+                            <tr>
+                              <td class="orders-order">
+                                <div class="avatar-group justify-content-end">
+                                  <a href="#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
+                                    <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                                  </a>
+                                  Yeferson García
+                                </div>
+                              </td>
+                              <td class="orders-product">
+                                <span class="text-success">●</span> Disponible
+                              </td>
+
+                              <td class="text-right">
+                                <div class="dropdown">
+                                  <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fe fe-more-vertical"></i>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="orders.html#!" class="dropdown-item">
+                                      Contactar
+                                    </a>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="orders-order">
+                                <div class="avatar-group justify-content-end">
+                                  <a href="#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
+                                    <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                                  </a>
+                                  Carlos Gonzáles
+                                </div>
+                              </td>
+                              <td class="orders-product">
+                                <span class="text-danger">●</span> Ocupado
+                              </td>
+
+                              <td class="text-right">
+                                <div class="dropdown">
+                                  <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fe fe-more-vertical"></i>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="orders.html#!" class="dropdown-item">
+                                      Contactar
+                                    </a>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div> 
+
+                  </div>                          
+
+                  <div id="profile1" class="tab-pane fade  ">
+
+                    <!-- Hoteles -->
+                    <div class="card" data-toggle="lists" data-lists-values='["orders-order", "orders-product"]'>
+                      <div class="card-header">
+                        <div class="row align-items-center">
+                          <div class="col">
+
+                            <!-- Search -->
+                            <form class="row align-items-center">
+                              <div class="col-auto pr-0">
+                                <span class="fe fe-search text-muted"></span>
+                              </div>
+                              <div class="col">
+                                  <input type="search" class="form-control form-control-flush search" placeholder="Buscar hoteles">
+                              </div>
+                            </form>
+                            
+                          </div>
+
+                        </div> <!-- / .row -->
+                      </div>
+                      <div class="table-responsive">
+                        <table class="table table-sm table-nowrap card-table">
+                          <thead>
+                            <tr>
+
+                              <th>
+                                <a href="orders.html#" class="text-muted sort" data-sort="orders-order">
+                                  Hotel
+                                </a>
+                              </th>
+                              <th>
+                                <a href="orders.html#" class="text-muted sort" data-sort="orders-product">
+                                  Estado
+                                </a>
+                              </th>
+                            </tr>
+                          </thead>
+
+                          <tbody class="list">
+                            <tr>
+                              <td class="orders-order">
+                                <div class="avatar-group">
+                                  <a href="profile-posts.html" class="avatar avatar-xs" data-toggle="tooltip" title="">
+                                    <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                                  </a>
+                                  Hippocampus Vacation Club
+                                </div>
+                              </td>
+                              <td class="orders-product">
+                                <span class="text-success">●</span> Disponible
+                              </td>                      
+                              <td class="text-right">
+                                <div class="dropdown">
+                                  <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fe fe-more-vertical"></i>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="orders.html#!" class="dropdown-item">
+                                      Contactar
+                                    </a>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                                                                                                                       
+                            <tr>
+                              <td class="orders-order">
+                                <div class="avatar-group justify-content-end">
+                                  <a href="dashboard-topnav.html#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
+                                    <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                                  </a>
+                                  Marriot
+                                </div>
+                              </td>
+                              <td class="orders-product">
+                                <span class="text-danger">●</span> Ocupado
+                              </td>
+
+                              <td class="text-right">
+                                <div class="dropdown">
+                                  <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fe fe-more-vertical"></i>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="orders.html#!" class="dropdown-item">
+                                      Contactar
+                                    </a>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td class="orders-order">
+                                <div class="avatar-group justify-content-end">
+                                  <a href="dashboard-topnav.html#!" class="avatar avatar-xs" data-toggle="tooltip" title="">
+                                    <img src="templateDashkit/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle" alt="...">
+                                  </a>
+                                  Dallas
+                                </div>
+                              </td>
+                              <td class="orders-product">
+                                <span class="text-success">●</span> Disponible
+                              </td>
+
+                              <td class="text-right">
+                                <div class="dropdown">
+                                  <a href="orders.html#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fe fe-more-vertical"></i>
+                                  </a>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="orders.html#!" class="dropdown-item">
+                                      Contactar
+                                    </a>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+
+
+                          </tbody>
+                        </table>
+                      </div>
+                    </div> 
+
+                  </div>
+
+              </div>
+                
+            </div>
+                       
           </div>
 
           <!-- Time Line -->
