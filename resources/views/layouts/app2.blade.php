@@ -50,16 +50,13 @@
       });
     </script>
      
-    
-    
-
     <title>{{ config('app.name', 'Laravel') }}</title>
   </head>
   <body>
 
     <!-- TOPNAV
     ================================================== -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
       <div class="container">
 
         <!-- Toggler -->
@@ -68,8 +65,8 @@
         </button>
 
         <!-- Brand -->
-        <a class="navbar-brand mr-auto" href="index.html">
-          <img src="templateDashkit/assets/img/logo.svg" alt="..." class="navbar-brand-img">
+        <a class="navbar-brand mr-auto" href="{{route('welcome')}}">
+          <img src="template/assets/images/demo/logo/guauser.png" alt="..." class="navbar-brand-img">
         </a>
 
         <!-- Form -->
@@ -286,6 +283,20 @@
         <!-- User -->
         <div class="navbar-user">
       
+          @guest
+
+            <ul class="navbar-nav align-items-center mr-0">
+              <li>
+                <a class="nav-link" href="{{ route('login')}}" >
+                  Iniciar Sesión 
+                </a>
+
+              </li>
+            </ul>
+
+          @else  
+
+
           <!-- Dropdown -->
           <div class="dropdown mr-4 d-none d-lg-flex">
         
@@ -561,18 +572,8 @@
 
           </div>
 
-          @guest
 
-            <ul class="navbar-nav align-items-center mr-0">
-              <li>
-                <a class="nav-link" href="{{ route('login')}}" >
-                  Iniciar Sesión 
-                </a>
 
-              </li>
-            </ul>
-
-          @else  
 
           <!-- Dropdown -->
           <div class="dropdown">
@@ -626,6 +627,8 @@
 
 
   @yield('content')
+
+
 
     <!-- JAVASCRIPT
     ================================================== -->

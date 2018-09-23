@@ -189,7 +189,8 @@
         </div> <!-- / .row -->
         <div class="row">
 
-          <div class="col-12 col-xl-4">
+          <!-- Servicios -->
+          <div class="col-12 col-xl-3">
 
               <div class="card-header">
                 <div class="row align-items-center">
@@ -216,8 +217,7 @@
 
                 </div> <!-- / .row -->
               </div>
-
-            <!-- Servicios -->
+            
             <section class="container">
               <div class="row">
                   <div class="">
@@ -627,7 +627,7 @@
           </div>
 
           <!-- Time Line -->
-          <div class="col-12 col-xl-5">
+          <div class="col-12 col-xl-6">
                         
             <div class="card">
               <div class="card-body">
@@ -661,68 +661,63 @@
 
                     <div class="col ml--2">
 
-                        <!-- Title -->
-                        <h4 class="card-header-title">
-
-                          <select id="categorias" name="categorias" class="form-control form-control-sm" data-toggle="select">
-                            <option>Filtrar por Categorías</option>
-                            <option>Hogar</option>
-                            <option>Educación</option>
-                            <option>Noticias</option>
-                            <option>Servicios</option>
-                            <option>Política</option>
-                            <option>Deportes</option>
-                            <option>Religión</option>
-                            <option>Economía</option>
-                            <option>Moda</option>
-                            <option>Mascotas</option>
-                            <option>Salud</option>
-                            <option>Sexo</option>
-                            <option>Ninguna</option>
-                          </select>
-                        </h4>            
-                           
-                    </div>
-
-                  </div>
-
-                </div>
-
-                <div class="mb-3">
-
-                  <div class="row align-items-center">
-
-                    <div class="col-auto">
-                      
-                    </div>
-
-                    <div class="col ml--2">
-
-                        <textarea id="txt_descripcion" name="txt_descripcion" class="form-control" placeholder="Di lo que quieras..." rows="4" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"></textarea>
+                        <textarea id="txt_descripcion" name="txt_descripcion" class="form-control" placeholder="Di lo que quieras..." rows="4"></textarea>
                         <input type="hidden" id="lng_idusuario" name="lng_idusuario" value="{{ Auth::user()->id }}" readonly="yes">
                         <input type="hidden" id="usuario" name="usuario" value="{{ Auth::user()->name }}" readonly="yes">                        
                         <input type="hidden" id="str_correo" name="str_corro" value="{{ Auth::user()->email }}" readonly="yes">
                         <input type="hidden" id="str_fecha_publicacion" name="str_fecha_publicacion" value="{{ date('d/m/Y') }}" readonly="yes"> 
-                        <input type="hidden" id="avatar_usuario" name="avatar_usuario" value="{{ Auth::user()->avatar }}" readonly="yes">               
+                        <input type="hidden" id="avatar_usuario" name="avatar_usuario" value="{{ Auth::user()->avatar }}" readonly="yes">              
                            
                     </div>
-                            
+
+                    <div class="col-auto">
+                      
+                        <a href="#!" class="btn btn-rounded-circle btn-primary btn-sm" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                          <span class="fe fe-corner-down-left"></span>
+                        </a> 
+
+                    </div>
+
                   </div>
 
                 </div>
 
                 <div class="collapse" id="collapseExample">
-                  <div class="card card-body">    
-                    <div class="d-flex justify-content-center">
+                  <div class="card card-body">  
 
-                      <div class="custom-file">
-                        <input type="file" id="str_ruta" name="str_ruta" class="custom-file-input" id="customFile" lang="es">
-                        <label class="custom-file-label" for="customFile">
-                          Añadir
-                          <span class="fe fe-image" title="foto"></span>
-                          <span class="fe fe-film" title="video"></span>
-                        </label>
-                      </div>
+                    <div class="col-12"><!-- d-flex justify-content-center -->
+
+                        <!-- Title -->
+                        <h4 class="card-header-title">
+                          <select id="categorias" name="categorias" class="form-control form-control-sm" data-toggle="select">
+                            <option>Categorías</option>
+                            <option>Entretenimiento</option>
+                            <option>Tecnología</option>
+                            <option>Noticias</option>
+                            <option>Servicios</option>
+                            <option>Política</option>
+                            <option>Deportes</option>
+                            <option>Religión</option>
+                            <option>Economía</option>                            
+                            <option>Mascotas</option>
+                            <option>Salud</option>
+                            <option>Sexo</option>
+                            <option>Ninguna</option>
+                          </select>
+                        </h4> 
+                      
+                    </div>
+                      <br>
+                    <div class="col-12">
+                                  
+                        <div class="custom-file">
+                          <input type="file" id="str_ruta" name="str_ruta" class="custom-file-input" id="customFile" lang="es">
+                          <label class="custom-file-label" for="customFile">
+                            Añadir
+                            <span class="fe fe-image" title="foto"></span>
+                            <span class="fe fe-film" title="video"></span>
+                          </label>
+                        </div>                      
                                           
                     </div> 
 
@@ -733,19 +728,24 @@
                   </div>
                 </div>
 
+                <div id="cargando">
+                  <div class="d-flex justify-content-center">
+                    <div class="loader loader-primary"></div>
+                  </div>
+                </div>
+
                 <hr>
                 @endguest
 
                     <!-- Inicio Nueva Publicación-->
-
                     <div id="msjNuevaspublicaciones" class="">
                       <div class="alert alert-warning alert-dismissible fade show d-flex justify-content-center" role="alert">
                         
                         Hay&nbsp;<b id="contNuevaspublicaciones"> </b> <a id="leerMsj" href="#!">&nbsp;leer</a>
       
                       </div>
-                    </div>
-                  
+                    </div>                
+
                     <!-- Inicio todas las Publicaciones-->
                     <div id="publicaciones">
 
@@ -805,24 +805,24 @@
                             </div>
                           </div>
 
+                          @if( !empty($dato['str_ruta'] ))
+
+                            <!--
+                              <p class="text-center mb-3">
+                                <img src="{{ $dato['str_ruta'] }}" alt="..." class="img-fluid rounded">
+                              </p>
+                            -->
+
+                            <p class="text-center mb-3">
+                              <img src="templateDashkit/assets/img/posts/post-1.jpg" alt="..." class="img-fluid rounded">
+                            </p>                             
+
+                          @endif    
+
                           <p class="mb-3" style="text-align: justify;">
                             {{ $dato['txt_descripcion']  }}
                           </p>                          
                             
-                            @if( !empty($dato['str_ruta'] ))
-
-                              <!--
-                                <p class="text-center mb-3">
-                                  <img src="{{ $dato['str_ruta'] }}" alt="..." class="img-fluid rounded">
-                                </p>
-                              -->
-
-                              <p class="text-center mb-3">
-                                <img src="templateDashkit/assets/img/posts/post-1.jpg" alt="..." class="img-fluid rounded">
-                              </p>                             
-
-                            @endif
-
                           <div class="mb-3">
                             <div class="row">
                               <div class="col">
@@ -838,8 +838,6 @@
                               </div>
 
                               <div class="col-auto">
-
-
                               
                               </div>
                             </div> 
@@ -850,7 +848,6 @@
                         @endforeach
 
                       @endif
-
 
                     </div>
                     <!-- Fin Nueva Publicación-->

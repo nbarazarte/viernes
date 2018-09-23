@@ -30,12 +30,12 @@
   <body>
 
  <!-- header -->
-    <header class="header-sticky header-light bg-white">
+    <header class="sticky-top header-light bg-white"><!-- header-sticky -->
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="template/index.html">
-            <img class="navbar-logo navbar-logo-light" src="template/assets/images/demo/logo/logo-light.svg" alt="Logo">
-            <img class="navbar-logo navbar-logo-dark" src="template/assets/images/demo/logo/logo-dark.svg" alt="Logo">
+          <a class="navbar-brand" href="{{ route('welcome')}}">
+            <img class="navbar-logo navbar-logo-light" src="template/assets/images/demo/logo/guauser.png" alt="Logo">
+            <img class="navbar-logo navbar-logo-dark" src="template/assets/images/demo/logo/guauser.png" alt="Logo">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="burger"><span></span></span></button>
 
@@ -71,11 +71,11 @@
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     
-                      {{ ucwords(Auth::user()->name) }}
+                     
 
                       @if(empty(Auth::user()->avatar))
                         
-                        <i class="fas fa-paw fs-22"></i>
+                       <img src="templateDashkit/assets/img/avatars/profiles/user.png" alt="Avatar" class="avatar avatar-login rounded">
                         
                       @else
 

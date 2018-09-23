@@ -46,7 +46,7 @@ function pmp(){//publicar
 
   var categoria = document.getElementById('categorias').options[document.getElementById('categorias').selectedIndex].text;
 
-  if(categoria == "Filtrar por Categorías"){
+  if(categoria == "Categorías"){
     categoria = "Ninguna"
   }
 
@@ -86,6 +86,8 @@ function gotData(data){
     //console.log(timelineArray.reverse());
 
     recorrerTimeline(timelineArray);
+  }else{
+    setTimeout('cargarndoNone()',200)
   }
 
 }
@@ -168,17 +170,84 @@ function mensajes(){
   //console.log(timelineArray.reverse());
 
   recorrerTimeline(timelineArray);
-
 }
 
 function recorrerTimeline(timelineArray) {
 
+    document.getElementById('cargando').style.display = "inline";
+
     var elementos;
     var avatar;
-    var ruta;    
+    var ruta;
+    var clase;    
     
     timelineArray.reverse().forEach(function(element) {
     //console.log(element);
+
+
+
+
+  switch(element['str_categoria']) {
+    case 'Entretenimiento':
+        clase = 'badge badge-primary';
+        break;
+    case 'Tecnología':
+        clase = 'badge badge-secondary';
+        break;
+    case 'Noticias':
+        clase = 'badge badge-success';
+        break;
+    case 'Servicios':
+        clase = 'badge badge-info';
+        break;
+    case 'Política':
+        clase = 'badge badge-warning';
+        break;
+    case 'Deportes':
+        clase = 'badge badge-danger';
+        break;
+    case 'Religión':
+        clase = 'badge badge-light';
+        break;
+    case 'Economía':
+        clase = 'badge badge-dark';
+        break;
+    case 'Mascotas':
+        clase = 'badge badge-secondary';
+        break;
+    case 'Salud':
+        clase = 'badge badge-secondary';
+        break;
+    case 'Sexo':
+        clase = 'badge badge-secondary';
+        break;
+    case 'Ninguna':
+        clase = '';
+        break;                            
+    default:
+        clase = '';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     if(elementos == null){
       elementos = "";
@@ -215,7 +284,7 @@ function recorrerTimeline(timelineArray) {
     elementos +=                                  element['usuario'];
     elementos +='                                </h4>';
     elementos +='                                <p class="card-text small text-muted">';
-    elementos +='                                  <span class="badge badge-light">'+element['str_categoria']+'</span> <span class="fe fe-calendar"></span>' + ' ' +element['str_fecha_publicacion'] + ' ' +'<span class="fe fe-clock"></span>' + ' ' +element['str_hora'];
+    elementos +='                                  <span class="'+clase+'">'+element['str_categoria']+'</span> <span class="fe fe-calendar"></span>' + ' ' +element['str_fecha_publicacion'] + ' ' +'<span class="fe fe-clock"></span>' + ' ' +element['str_hora'];
     elementos +='                                </p>';
     elementos +='                              </div>';
     elementos +='                              <div class="col-auto">';
@@ -232,10 +301,10 @@ function recorrerTimeline(timelineArray) {
     elementos +='                              </div>';
     elementos +='                            </div>';
     elementos +='                          </div>';
+    elementos +=                            ruta;    
     elementos +='                          <p class="mb-3" style="text-align: justify;">';
     elementos +=                              element['txt_descripcion'];
-    elementos +='                          </p>                          ';
-    elementos +=                            ruta;
+    elementos +='                          </p>';    
     elementos +='                          <div class="mb-3">';
     elementos +='                            <div class="row">';
     elementos +='                              <div class="col">';
@@ -247,13 +316,17 @@ function recorrerTimeline(timelineArray) {
     elementos +='                                </a>                                ';
     elementos +='                              </div>';
     elementos +='                              <div class="col-auto">';
-
     elementos +='                              </div>';
     elementos +='                            </div> ';
     elementos +='                          </div>';
     elementos +='                          <hr>';
-
   });
 
-  cajaPublicaciones.innerHTML = elementos;  
+  cajaPublicaciones.innerHTML = elementos;
+  setTimeout('cargarndoNone()',200)
+}
+
+function cargarndoNone() {
+   
+  document.getElementById('cargando').style.display = "none";
 }

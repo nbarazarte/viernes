@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="viewport">
-      <div class="image image-overlay" style="background-image:url(template/assets/images/demo/login2.jpg)"></div>
+      <div class="image image-overlay" style="background-image:url(template/assets/images/demo/login.jpg)"></div>
       <div class="container">
         <div class="row justify-content-center align-items-center vh-100">
           <div class="col-md-6 col-lg-5">
