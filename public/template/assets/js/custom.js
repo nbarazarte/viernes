@@ -23,16 +23,44 @@
   ref.on('value',oneData, errData);//se llama cada vez que hay un elemento nuevo o eliminado en el time line de la base de datos
 /*******************************************************************************************************************************/
 
+//document.getElementById("archivoUp").addEventListener("change", subirArchivo);
+
+function subirArchivo(){
+  
+  if(document.getElementById('archivoUp').value != "" ){
+
+    //alert('subiendo');
+    document.getElementById("archivoForm").submit();
+  }
+}
+
+$(".custom-file-input").change(function(){
+$.ajax({
+      url:'/upload',
+      data:new FormData($("#archivoForm")[0]),
+      dataType:'json',
+      async:false,
+      type:'post',
+      processData: false,
+      contentType: false,
+      success:function(response){
+        console.log(response);
+      },
+    });
+ });
 
 //publicar contenido:
 document.getElementById("btnpmp").addEventListener("click", pmp);
 
 function pmp(){//publicar  
 
+  var categoria;
+  var nombreArchivo;
   var d = new Date();
   var horas = d.getHours();
   var minutos = d.getMinutes();
   var segundos = d.getSeconds();
+  var hora;
 
   if (minutos < 10) {
     minutos = "0"+minutos;
@@ -42,13 +70,20 @@ function pmp(){//publicar
     segundos = "0"+segundos;
   }  
 
-  var hora = horas+":"+minutos+":"+segundos;
+  hora = horas+":"+minutos+":"+segundos;
 
-  var categoria = document.getElementById('categorias').options[document.getElementById('categorias').selectedIndex].text;
+  categoria = document.getElementById('categorias').options[document.getElementById('categorias').selectedIndex].text;
 
   if(categoria == "Categorías"){
     categoria = "Ninguna"
   }
+
+  //document.getElementById("archivoForm").submit();
+
+    nombreArchivo = document.querySelector('input[type=file]').files[0].name;//corresponde al input file 'logo'
+    document.getElementById('nombreArchivo').innerHTML = nombreArchivo;
+
+  //alert(document.getElementById('lng_idusuario').value+"_"+nombreArchivo);
 
   var data = {
 
@@ -59,7 +94,7 @@ function pmp(){//publicar
     str_correo: document.getElementById('str_correo').value,    
     str_fecha_publicacion: document.getElementById('str_fecha_publicacion').value, 
     avatar_usuario: document.getElementById('avatar_usuario').value,     
-    str_ruta: document.getElementById('str_ruta').value, 
+    archivo: document.getElementById('lng_idusuario').value+"_"+nombreArchivo, 
     str_hora: hora, 
      
   }
@@ -67,7 +102,7 @@ function pmp(){//publicar
   ref.push(data);
 
   document.getElementById('txt_descripcion').value = "";
-  document.getElementById('str_ruta').value = "";  
+  document.getElementById('logo').value = "";  
   document.getElementById('categorias').selectedIndex = 0;
   document.getElementById('select2-categorias-container').innerHTML = document.getElementById('categorias').options[document.getElementById('categorias').selectedIndex].text;
 
@@ -184,70 +219,46 @@ function recorrerTimeline(timelineArray) {
     timelineArray.reverse().forEach(function(element) {
     //console.log(element);
 
-
-
-
-  switch(element['str_categoria']) {
-    case 'Entretenimiento':
-        clase = 'badge badge-primary';
-        break;
-    case 'Tecnología':
-        clase = 'badge badge-secondary';
-        break;
-    case 'Noticias':
-        clase = 'badge badge-success';
-        break;
-    case 'Servicios':
-        clase = 'badge badge-info';
-        break;
-    case 'Política':
-        clase = 'badge badge-warning';
-        break;
-    case 'Deportes':
-        clase = 'badge badge-danger';
-        break;
-    case 'Religión':
-        clase = 'badge badge-light';
-        break;
-    case 'Economía':
-        clase = 'badge badge-dark';
-        break;
-    case 'Mascotas':
-        clase = 'badge badge-secondary';
-        break;
-    case 'Salud':
-        clase = 'badge badge-secondary';
-        break;
-    case 'Sexo':
-        clase = 'badge badge-secondary';
-        break;
-    case 'Ninguna':
-        clase = '';
-        break;                            
-    default:
-        clase = '';
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    switch(element['str_categoria']) {
+      case 'Entretenimiento':
+          clase = 'badge badge-primary';
+          break;
+      case 'Tecnología':
+          clase = 'badge badge-secondary';
+          break;
+      case 'Noticias':
+          clase = 'badge badge-success';
+          break;
+      case 'Servicios':
+          clase = 'badge badge-info';
+          break;
+      case 'Política':
+          clase = 'badge badge-warning';
+          break;
+      case 'Deportes':
+          clase = 'badge badge-danger';
+          break;
+      case 'Religión':
+          clase = 'badge badge-light';
+          break;
+      case 'Economía':
+          clase = 'badge badge-dark';
+          break;
+      case 'Mascotas':
+          clase = 'badge badge-secondary';
+          break;
+      case 'Salud':
+          clase = 'badge badge-secondary';
+          break;
+      case 'Sexo':
+          clase = 'badge badge-secondary';
+          break;
+      case 'Ninguna':
+          clase = '';
+          break;                            
+      default:
+          clase = '';
+    }
 
     if(elementos == null){
       elementos = "";
@@ -268,7 +279,7 @@ function recorrerTimeline(timelineArray) {
 
     }else{  
       //ruta = '<p class="text-center mb-3"><img src="'+element['str_ruta']+'" alt="..." class="img-fluid rounded"></p>';
-      ruta = '<p class="text-center mb-3"><img src="templateDashkit/assets/img/posts/post-1.jpg" alt="..." class="img-fluid rounded"></p>';        
+      ruta = '<p class="text-center mb-3"><img src="storage/'+element['archivo']+'" alt="..." class="img-fluid rounded"></p>';        
     }
 
     elementos = elementos +'<div class="mb-3">';

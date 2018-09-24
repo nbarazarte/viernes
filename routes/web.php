@@ -16,11 +16,22 @@ Route::get('/', [
 	'as' =>'welcome'
 ]);
 
-Route::post('/', 'WelcomeController@store');
+//Route::post('/', 'WelcomeController@store');
+//Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/upload', 'WelcomeController@upload')->name('upload');
+
+
+
+/*Route::post('/upload', [
+	'uses' => 'WelcomeController@upload',
+	'as' =>'upload'
+]);*/
+
+Route::get('/mostrar', 'WelcomeController@mostrar');
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
 
 //Publicas:
 Route::get('/Servicios', [

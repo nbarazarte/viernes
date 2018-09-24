@@ -7,6 +7,7 @@ use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 use App\Mascotas;
 use App\Http\Requests\ReglasMascotasPerdidas;
+use Illuminate\Support\Facades\Storage;
 use DB;
 
 class WelcomeController extends Controller
@@ -37,7 +38,6 @@ protected $database;
      */
     public function index()
     {        
-
         //order the reference's children by their key in ascending order
         $reference = $this->database->getReference('timeline');        
         $shallow = $reference->shallow();
@@ -55,8 +55,55 @@ protected $database;
 
             return view('welcome',compact('datos'));
         }
-
     }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function upload(Request $request)
+    {
+        if ($request->isMethod('post')){  
+
+            //return $request->all();
+            //return "Este es el archivo:". $request->file('logo');
+
+            if($request->hasfile('logo')){
+
+                //echo $request->file('logo');
+                //$extension = $request->logo->extension();
+                //return $request->logo->path();   
+                //return $request->logo->store('public'); 
+                //Storage::putFile('public', $archivo);  
+                //Storage::putFile('public', $request->file('logo'));              
+                $archivo = \Auth::user()->id."_".$_FILES['logo']['name'];
+                //echo $archivo;
+                $request->logo->storeAs('public', $archivo);
+
+                return response()->json(['response' => 'Archivo esta lleno']);      
+
+            }else{
+
+                return response()->json(['response' => 'Archivo vacío']); 
+            }
+        }
+    }
+
+    public function mostrar()
+    {
+        //return dd(Storage::allFiles('public'));//muestra a todos los archivos dentro del directorio public y de sus subdirectorios
+        //return dd(Storage::files('public'));//muestra a todos los archivos dentro del directorio public pero no de sus subdirectorios
+        //Storage::makeDirectory('public/otroNuevo');//crea un directorio (devuelve true o false)
+        //Storage::deleteDirectory('public/otroNuevo');//borra un directorio (devuelve true o false)
+        $url = Storage::url('mifoto.jpeg');
+        return "<img src='".$url."'/>";
+    }
+
+
+
+
 
     /**
      * Store a newly created resource in storage.

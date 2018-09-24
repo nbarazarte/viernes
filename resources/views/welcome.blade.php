@@ -218,7 +218,6 @@
                 </div> <!-- / .row -->
               </div>
 
-
               <div class="card">
                 
                 <div data-toggle="lists" data-lists-values='["name"]'>
@@ -299,7 +298,7 @@
                           
                           <!-- Button -->
                           <a href="#!" class="btn btn-sm btn-white" title="Contactar">
-                            Chat
+                            <span class="fe fe-message-circle"></span>
                           </a>
 
                         </div>
@@ -332,7 +331,7 @@
                           
                           <!-- Button -->
                           <a href="#!" class="btn btn-sm btn-white" title="Contactar">
-                            Chat
+                            <span class="fe fe-message-circle"></span>
                           </a>
 
                         </div>
@@ -365,7 +364,7 @@
                           
                           <!-- Button -->
                           <a href="#!" class="btn btn-sm btn-white" title="Contactar">
-                            Chat
+                            <span class="fe fe-message-circle"></span>
                           </a>
 
                         </div>
@@ -398,7 +397,7 @@
                           
                           <!-- Button -->
                           <a href="#!" class="btn btn-sm btn-white" title="Contactar">
-                            Chat
+                            <span class="fe fe-message-circle"></span>
                           </a>
 
                         </div>
@@ -431,7 +430,7 @@
                           
                           <!-- Button -->
                           <a href="#!" class="btn btn-sm btn-white" title="Contactar">
-                            Chat
+                            <span class="fe fe-message-circle"></span>
                           </a>
 
                         </div>
@@ -464,7 +463,7 @@
                           
                           <!-- Button -->
                           <a href="#!" class="btn btn-sm btn-white" title="Contactar">
-                            Chat
+                            <span class="fe fe-message-circle"></span>
                           </a>
 
                         </div>
@@ -497,7 +496,7 @@
                           
                           <!-- Button -->
                           <a href="#!" class="btn btn-sm btn-white" title="Contactar">
-                            Chat
+                            <span class="fe fe-message-circle"></span>
                           </a>
 
                         </div>
@@ -530,22 +529,17 @@
                           
                           <!-- Button -->
                           <a href="#!" class="btn btn-sm btn-white" title="Contactar">
-                            Chat
+                            <span class="fe fe-message-circle"></span>
                           </a>
 
                         </div>
                       </div> <!-- / .row -->
                     </li>                                                                                                                                                       
-
                   </ul>
                  
-
                 </div>
               </div>            
-
-
-
-                                       
+                     
           </div>
 
           <!-- Time Line -->
@@ -634,11 +628,19 @@
                         </h4> 
                       
                     </div>
-                      <br>
+
+                    <br>
+
                     <div class="col-12">
                                   
                         <div class="custom-file">
-                          <input type="file" id="str_ruta" name="str_ruta" class="custom-file-input" id="customFile" lang="es">
+
+                          <form enctype="multipart/form-data" id="archivoForm" role="form" method="POST" action="" >
+                            <input type="hidden" name="_token" value="{{ csrf_token()}}">
+                            <input type="file" id="logo" name="logo" class="custom-file-input" id="catagry_logo">
+                            <div id="nombreArchivo"></div>
+                          </form>
+
                           <label class="custom-file-label" for="customFile">
                             Añadir
                             <span class="fe fe-image" title="foto"></span>
