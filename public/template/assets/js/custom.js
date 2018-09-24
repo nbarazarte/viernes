@@ -103,6 +103,7 @@ function pmp(){//publicar
 
   document.getElementById('txt_descripcion').value = "";
   document.getElementById('logo').value = "";  
+   document.getElementById('nombreArchivo').value = "";  
   document.getElementById('categorias').selectedIndex = 0;
   document.getElementById('select2-categorias-container').innerHTML = document.getElementById('categorias').options[document.getElementById('categorias').selectedIndex].text;
 

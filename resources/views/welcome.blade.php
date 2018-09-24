@@ -734,16 +734,12 @@
                             </div>
                           </div>
 
-                          @if( !empty($dato['str_ruta'] ))
+                          @if( !empty($dato['archivo'] ))
 
-                            <!--
-                              <p class="text-center mb-3">
-                                <img src="{{ $dato['str_ruta'] }}" alt="..." class="img-fluid rounded">
-                              </p>
-                            -->
+        
 
                             <p class="text-center mb-3">
-                              <img src="templateDashkit/assets/img/posts/post-1.jpg" alt="..." class="img-fluid rounded">
+                              <img src="storage/{{ $dato['archivo'] }}" alt="..." class="img-fluid rounded">
                             </p>                             
 
                           @endif    
