@@ -550,13 +550,15 @@
                        
               @guest
                 <div id="btnpmp"></div>
+                <div id="logo"></div>
+                <div id="displayImagen"></div>
+                <div id="cerrarDisplayImagen"></div>
                 <div id="cargando">
                   <div class="d-flex justify-content-center">
                     <div class="loader loader-primary"></div>
                   </div>
                 </div>
               @else
-
 
                 <div class="mb-3">
 
@@ -579,7 +581,6 @@
                       </a>
 
                     </div>
-
 
 <style>
 
