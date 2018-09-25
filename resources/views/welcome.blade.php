@@ -580,9 +580,38 @@
 
                     </div>
 
+
+<style>
+
+  .thumb {
+    height: 100px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+  }
+</style>
                     <div class="col ml--2">
 
+                        <!-- Title -->
+                        <h4 class="card-header-title">
+                          <select id="categorias" name="categorias" class="form-control form-control-sm" data-toggle="select">
+                            <option>Categorías</option>
+                            <option>Entretenimiento</option>
+                            <option>Tecnología</option>
+                            <option>Noticias</option>
+                            <option>Servicios</option>
+                            <option>Política</option>
+                            <option>Deportes</option>
+                            <option>Religión</option>
+                            <option>Economía</option>                            
+                            <option>Mascotas</option>
+                            <option>Salud</option>
+                            <option>Sexo</option>
+                            <option>Ninguna</option>
+                          </select>
+                        </h4>                       
+
                         <textarea id="txt_descripcion" name="txt_descripcion" class="form-control" placeholder="Di lo que quieras..." rows="4"></textarea>
+
                         <input type="hidden" id="lng_idusuario" name="lng_idusuario" value="{{ Auth::user()->id }}" readonly="yes">
                         <input type="hidden" id="usuario" name="usuario" value="{{ Auth::user()->name }}" readonly="yes">                        
                         <input type="hidden" id="str_correo" name="str_corro" value="{{ Auth::user()->email }}" readonly="yes">
@@ -606,31 +635,6 @@
                 <div class="collapse" id="collapseExample">
                   <div class="card card-body">  
 
-                    <div class="col-12"><!-- d-flex justify-content-center -->
-
-                        <!-- Title -->
-                        <h4 class="card-header-title">
-                          <select id="categorias" name="categorias" class="form-control form-control-sm" data-toggle="select">
-                            <option>Categorías</option>
-                            <option>Entretenimiento</option>
-                            <option>Tecnología</option>
-                            <option>Noticias</option>
-                            <option>Servicios</option>
-                            <option>Política</option>
-                            <option>Deportes</option>
-                            <option>Religión</option>
-                            <option>Economía</option>                            
-                            <option>Mascotas</option>
-                            <option>Salud</option>
-                            <option>Sexo</option>
-                            <option>Ninguna</option>
-                          </select>
-                        </h4> 
-                      
-                    </div>
-
-                    <br>
-
                     <div class="col-12">
                                   
                         <div class="custom-file">
@@ -638,7 +642,7 @@
                           <form enctype="multipart/form-data" id="archivoForm" role="form" method="POST" action="" >
                             <input type="hidden" name="_token" value="{{ csrf_token()}}">
                             <input type="file" id="logo" name="logo" class="custom-file-input" id="catagry_logo">
-                            <div id="nombreArchivo"></div>
+                            
                           </form>
 
                           <label class="custom-file-label" for="customFile">
@@ -646,7 +650,32 @@
                             <span class="fe fe-image" title="foto"></span>
                             <span class="fe fe-film" title="video"></span>
                           </label>
-                        </div>                      
+                        </div> 
+
+                        <div id="displayImagen" class="card">
+                          <div class="card-body">
+
+                            <div class="row align-items-center">
+
+                              <div class="col ml--2">
+
+                                <div class="text-center">
+
+                                    <button id="cerrarDisplayImagen" type="button" class="close" aria-label="Close" title="Quitar">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>          
+
+                                  <div id="list"></div>
+                                
+                                </div>
+                                
+                              </div>
+
+                            </div>
+
+                          </div>
+                        </div>
+
                                           
                     </div> 
 
@@ -735,9 +764,7 @@
                           </div>
 
                           @if( !empty($dato['archivo'] ))
-
         
-
                             <p class="text-center mb-3">
                               <img src="storage/{{ $dato['archivo'] }}" alt="..." class="img-fluid rounded">
                             </p>                             

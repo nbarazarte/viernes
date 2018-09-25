@@ -23,19 +23,53 @@
   ref.on('value',oneData, errData);//se llama cada vez que hay un elemento nuevo o eliminado en el time line de la base de datos
 /*******************************************************************************************************************************/
 
-//document.getElementById("archivoUp").addEventListener("change", subirArchivo);
 
-function subirArchivo(){
-  
-  if(document.getElementById('archivoUp').value != "" ){
+//coloca la miniatura de la imágen:
+function handleFileSelect(evt) {
 
-    //alert('subiendo');
-    document.getElementById("archivoForm").submit();
+  document.getElementById('list').innerHTML = "";
+  document.getElementById('displayImagen').style.display = "inline";
+
+    var files = evt.target.files; // FileList object
+
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+          var span = document.createElement('span');
+          span.innerHTML = ['<img class="thumb img-thumbnail" src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/>'].join('');
+          document.getElementById('list').insertBefore(span, null);
+        };
+      })(f);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
+
+    nombreArchivo = document.querySelector('input[type=file]').files[0].name;//corresponde al input file 'logo'
+    //document.getElementById('nombreArchivo').innerHTML = nombreArchivo;
   }
-}
 
-$(".custom-file-input").change(function(){
-$.ajax({
+document.getElementById('logo').addEventListener('change', handleFileSelect, false);
+
+//publicar contenido:
+document.getElementById("btnpmp").addEventListener("click", pmp);
+
+function pmp(){//publicar  
+
+  //sube la imágen por ajax:
+  $.ajax({
       url:'/upload',
       data:new FormData($("#archivoForm")[0]),
       dataType:'json',
@@ -47,15 +81,11 @@ $.ajax({
         console.log(response);
       },
     });
- });
 
-//publicar contenido:
-document.getElementById("btnpmp").addEventListener("click", pmp);
-
-function pmp(){//publicar  
-
+  //guarda los datos en firebase:
   var categoria;
   var nombreArchivo;
+  var nombre;
   var d = new Date();
   var horas = d.getHours();
   var minutos = d.getMinutes();
@@ -78,12 +108,15 @@ function pmp(){//publicar
     categoria = "Ninguna"
   }
 
-  //document.getElementById("archivoForm").submit();
+  if(document.getElementById('logo').value != ""){
 
-    nombreArchivo = document.querySelector('input[type=file]').files[0].name;//corresponde al input file 'logo'
-    document.getElementById('nombreArchivo').innerHTML = nombreArchivo;
+    nombreArchivo = document.querySelector('input[type=file]').files[0].name;//corresponde al input file 'logo'        
+    nombre = document.getElementById('lng_idusuario').value+"_"+nombreArchivo;
 
-  //alert(document.getElementById('lng_idusuario').value+"_"+nombreArchivo);
+  }else{
+
+    nombre = "";
+  }
 
   var data = {
 
@@ -94,16 +127,16 @@ function pmp(){//publicar
     str_correo: document.getElementById('str_correo').value,    
     str_fecha_publicacion: document.getElementById('str_fecha_publicacion').value, 
     avatar_usuario: document.getElementById('avatar_usuario').value,     
-    archivo: document.getElementById('lng_idusuario').value+"_"+nombreArchivo, 
+    archivo: nombre,
     str_hora: hora, 
-     
   }
 
   ref.push(data);
 
   document.getElementById('txt_descripcion').value = "";
   document.getElementById('logo').value = "";  
-   document.getElementById('nombreArchivo').value = "";  
+  document.getElementById('list').innerHTML = ""; 
+  //document.getElementById('nombreArchivo').innerHTML = ""; 
   document.getElementById('categorias').selectedIndex = 0;
   document.getElementById('select2-categorias-container').innerHTML = document.getElementById('categorias').options[document.getElementById('categorias').selectedIndex].text;
 
@@ -274,12 +307,12 @@ function recorrerTimeline(timelineArray) {
       avatar = '<img src="'+element['avatar_usuario']+'" alt="Avatar" class="avatar-img rounded-circle">';
     }
 
-    if(element['str_ruta'] == ""){
+    if(element['archivo'] == ""){
 
       ruta = '';
 
     }else{  
-      //ruta = '<p class="text-center mb-3"><img src="'+element['str_ruta']+'" alt="..." class="img-fluid rounded"></p>';
+
       ruta = '<p class="text-center mb-3"><img src="storage/'+element['archivo']+'" alt="..." class="img-fluid rounded"></p>';        
     }
 
@@ -335,10 +368,20 @@ function recorrerTimeline(timelineArray) {
   });
 
   cajaPublicaciones.innerHTML = elementos;
+  displayImagen();
   setTimeout('cargarndoNone()',200)
 }
 
 function cargarndoNone() {
    
   document.getElementById('cargando').style.display = "none";
+}
+
+document.getElementById("cerrarDisplayImagen").addEventListener("click", displayImagen);
+
+function displayImagen() {
+   
+document.getElementById('logo').value = "";
+
+  document.getElementById('displayImagen').style.display = "none";
 }
