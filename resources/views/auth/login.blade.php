@@ -144,6 +144,18 @@
                         </div>
 
                         <div class="form-group">
+
+                            <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_PUBLIC_KEY') }}"></div>
+                            
+                            @if ($errors->has('g-recaptcha-response'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                </span>
+                            @endif
+                            
+                        </div>                         
+
+                        <div class="form-group">
                             
                             <button type="submit" class="btn btn-primary btn-block btn-rounded btn-sm">
                                 Crear Cuenta
