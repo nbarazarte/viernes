@@ -94,6 +94,10 @@
 
                 <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_PUBLIC_KEY') }}"></div>
                 
+            </div>
+
+            <div class="form-group d-flex justify-content-center">                
+                
                 @if ($errors->has('g-recaptcha-response'))
                     <span class="help-block">
                         <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
