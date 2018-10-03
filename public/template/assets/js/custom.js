@@ -23,45 +23,67 @@
   ref.on('value',oneData, errData);//se llama cada vez que hay un elemento nuevo o eliminado en el time line de la base de datos
 /*******************************************************************************************************************************/
 
+document.getElementById('logo').addEventListener('change', handleFileSelect, false);
 
 //coloca la miniatura de la imágen:
 function handleFileSelect(evt) {
 
-  document.getElementById('list').innerHTML = "";
-  document.getElementById('displayImagen').style.display = "inline";
+    //validate();
 
-    var files = evt.target.files; // FileList object
+    if(validate() == true){
 
-    // Loop through the FileList and render image files as thumbnails.
-    for (var i = 0, f; f = files[i]; i++) {
+        //alert('es válido el archivo');
 
-      // Only process image files.
-      if (!f.type.match('image.*')) {
-        continue;
-      }
+        document.getElementById('list').innerHTML = "";
+        document.getElementById('displayImagen').style.display = "inline";
 
-      var reader = new FileReader();
+        var files = evt.target.files; // FileList object
 
-      // Closure to capture the file information.
-      reader.onload = (function(theFile) {
-        return function(e) {
-          // Render thumbnail.
-          var span = document.createElement('span');
-          span.innerHTML = ['<img class="thumb img-thumbnail" src="', e.target.result,
-                            '" title="', escape(theFile.name), '"/>'].join('');
-          document.getElementById('list').insertBefore(span, null);
-        };
-      })(f);
+        // Loop through the FileList and render image files as thumbnails.
+        for (var i = 0, f; f = files[i]; i++) {
 
-      // Read in the image file as a data URL.
-      reader.readAsDataURL(f);
+          // Only process image files.
+          if (!f.type.match('image.*')) {
+            continue;//capture();
+          }
+
+          var reader = new FileReader();
+
+          // Closure to capture the file information.
+          reader.onload = (function(theFile) {
+            return function(e) {
+              // Render thumbnail.
+              var span = document.createElement('span');
+              span.innerHTML = ['<img class="thumb img-thumbnail" src="', e.target.result,
+                                '" title="', escape(theFile.name), '"/>'].join('');
+              document.getElementById('list').insertBefore(span, null);
+            };
+          })(f);
+
+          // Read in the image file as a data URL.
+          reader.readAsDataURL(f);
+        }
+
+        nombreArchivo = document.querySelector('input[type=file]').files[0].name;//corresponde al input file 'logo'
+        //document.getElementById('nombreArchivo').innerHTML = nombreArchivo;    
+
+    }else{
+      
+      document.getElementById('msjs').innerHTML = '<div class="alert alert-warning alert-dismissible fade show" role="alert"><strong>¡Disculpe!</strong> El tamaño del archivo debe ser menor a 500MB.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
     }
 
-    nombreArchivo = document.querySelector('input[type=file]').files[0].name;//corresponde al input file 'logo'
-    //document.getElementById('nombreArchivo').innerHTML = nombreArchivo;
   }
 
-document.getElementById('logo').addEventListener('change', handleFileSelect, false);
+
+
+function capture(){
+    var canvas = document.getElementById('canvas');
+    var video = document.getElementById('video');
+    video.value = 'storage/'+document.getElementById('logo').value;
+    canvas.getContext('2d').drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+}  
+
+
 
 //publicar contenido:
 document.getElementById("btnpmp").addEventListener("click", pmp);
@@ -78,7 +100,9 @@ function pmp(){//publicar
       processData: false,
       contentType: false,
       success:function(response){
-        console.log(response);
+        //console.log(response);
+        //var str = JSON.stringify(response, null, 2); // spacing level = 2
+        //document.getElementById('miPrueba').innerHTML = str;//el div habria que crearlo
       },
     });
 
@@ -248,8 +272,8 @@ function recorrerTimeline(timelineArray) {
     var elementos;
     var avatar;
     var ruta;
-    var clase;    
-    
+    var clase;
+        
     timelineArray.reverse().forEach(function(element) {
     //console.log(element);
 
@@ -313,7 +337,22 @@ function recorrerTimeline(timelineArray) {
 
     }else{  
 
-      ruta = '<p class="text-center mb-3"><img src="storage/'+element['archivo']+'" alt="..." class="img-fluid rounded"></p>';        
+      var str = element['archivo'];
+      var file_type = str.substr(-4);
+    
+      switch(file_type) {
+        case 'jpeg':
+        case '.jpg':
+        case '.png':
+            ruta = '<p class="text-center mb-3"><img src="storage/'+element['archivo']+'" alt="..." class="img-fluid rounded" style="max-width: 100%; height: auto;"></p>'; 
+            break;
+        case '.mp4':
+            ruta = '<div class="embed-responsive embed-responsive-16by9">';
+            //ruta +=   '<iframe class="embed-responsive-item" src="storage/'+element['archivo']+'" allowfullscreen></iframe>';
+            ruta += '<video controls="controls" preload="metadata"><source src="storage/'+element['archivo']+'" type="video/mp4"></video>';
+            ruta += '</div>';
+            break;          
+      }          
     }
 
     elementos = elementos +'<div class="mb-3">';
@@ -381,7 +420,27 @@ document.getElementById("cerrarDisplayImagen").addEventListener("click", display
 
 function displayImagen() {
    
-document.getElementById('logo').value = "";
-
+  document.getElementById('logo').value = "";
   document.getElementById('displayImagen').style.display = "none";
+}
+
+function validate(){
+
+  var size=524288000;//500MB
+  var file_size=document.getElementById('logo').files[0].size;
+
+  if(file_size>=size){
+      //alert('File too large');
+      return false;
+  }
+
+  /*var type='image/jpeg';
+  var file_type=document.getElementById('logo').files[0].type;
+
+  if(file_type!=type){
+      //alert('Format not supported,Only .jpeg images are accepted');
+      return false;
+  }*/
+
+  return true;
 }
