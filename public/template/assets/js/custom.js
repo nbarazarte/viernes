@@ -23,7 +23,7 @@
   ref.on('value',oneData, errData);//se llama cada vez que hay un elemento nuevo o eliminado en el time line de la base de datos
 /*******************************************************************************************************************************/
 
-document.getElementById('logo').addEventListener('change', handleFileSelect, false);
+document.getElementById('logo').addEventListener('change', mostrarThumbnail, false);
 
 //coloca la miniatura de la imágen:
 function handleFileSelect(evt) {
@@ -76,14 +76,107 @@ function handleFileSelect(evt) {
 
 
 
-function capture(){
-    var canvas = document.getElementById('canvas');
-    var video = document.getElementById('video');
-    video.value = 'storage/'+document.getElementById('logo').value;
-    canvas.getContext('2d').drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-}  
 
 
+
+
+function mostrarThumbnail(){
+
+  if(validate() == true){
+
+    document.getElementById('list').innerHTML = "";
+    document.getElementById('displayImagen').style.display = "inline";  
+
+    var file = event.target.files[0];
+    var fileReader = new FileReader();
+
+    if (file.type.match('image')) {
+
+      fileReader.onload = function() {
+
+        var img = document.createElement('img');
+        img.src = fileReader.result;
+        img.classList.add("img-thumbnail");
+        //document.getElementsByTagName('div')[0].appendChild(img);
+
+        document.getElementById('list').appendChild(img);
+
+      };
+
+      fileReader.readAsDataURL(file);
+
+    } else {
+
+      fileReader.onload = function() {
+
+        var blob = new Blob([fileReader.result], {type: file.type});
+        var url = URL.createObjectURL(blob);
+        var video = document.createElement('video');
+
+        var timeupdate = function() {
+
+          if (snapImage()) {
+
+            video.removeEventListener('timeupdate', timeupdate);
+            video.pause();
+
+          }
+        };
+
+        video.addEventListener('loadeddata', function() {
+
+          if (snapImage()) {
+
+            video.removeEventListener('timeupdate', timeupdate);
+          }
+
+        });
+
+        var snapImage = function() {
+
+          var canvas = document.createElement('canvas');
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+          canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+          var image = canvas.toDataURL();
+          var success = image.length > 100000;
+
+          if (success) {
+
+            var img = document.createElement('img');
+            img.src = image;
+            img.classList.add("img-thumbnail");
+            
+            //document.getElementsByTagName('div')[0].appendChild(img);
+            document.getElementById('list').appendChild(img);
+            URL.revokeObjectURL(url);
+
+          }
+
+          return success;
+
+        };
+
+        video.addEventListener('timeupdate', timeupdate);
+        video.preload = 'metadata';
+        video.src = url;
+        // Load video in Safari / IE11
+        video.muted = true;
+        video.playsInline = true;
+        video.play();
+
+      };
+
+      fileReader.readAsArrayBuffer(file);
+
+    }
+
+  }else{
+    
+    document.getElementById('msjs').innerHTML = '<div class="alert alert-warning alert-dismissible fade show" role="alert"><strong>¡Disculpe!</strong> El tamaño del archivo debe ser menor a 500MB.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
+  }
+
+}
 
 //publicar contenido:
 document.getElementById("btnpmp").addEventListener("click", pmp);
