@@ -349,7 +349,7 @@ function recorrerTimeline(timelineArray) {
         case '.mp4':
             ruta = '<div class="embed-responsive embed-responsive-16by9">';
             //ruta +=   '<iframe class="embed-responsive-item" src="storage/'+element['archivo']+'" allowfullscreen></iframe>';
-            ruta += '<video controls="controls" preload="metadata"><source src="storage/'+element['archivo']+'" type="video/mp4"></video>';
+            ruta += '<video controls="controls" controlsList="nodownload" preload="metadata"><source src="storage/'+element['archivo']+'" type="video/mp4"></video>';
             ruta += '</div>';
             break;          
       }          
