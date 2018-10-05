@@ -26,65 +26,12 @@
 document.getElementById('logo').addEventListener('change', mostrarThumbnail, false);
 
 //coloca la miniatura de la imágen:
-function handleFileSelect(evt) {
-
-    //validate();
-
-    if(validate() == true){
-
-        //alert('es válido el archivo');
-
-        document.getElementById('list').innerHTML = "";
-        document.getElementById('displayImagen').style.display = "inline";
-
-        var files = evt.target.files; // FileList object
-
-        // Loop through the FileList and render image files as thumbnails.
-        for (var i = 0, f; f = files[i]; i++) {
-
-          // Only process image files.
-          if (!f.type.match('image.*')) {
-            continue;//capture();
-          }
-
-          var reader = new FileReader();
-
-          // Closure to capture the file information.
-          reader.onload = (function(theFile) {
-            return function(e) {
-              // Render thumbnail.
-              var span = document.createElement('span');
-              span.innerHTML = ['<img class="thumb img-thumbnail" src="', e.target.result,
-                                '" title="', escape(theFile.name), '"/>'].join('');
-              document.getElementById('list').insertBefore(span, null);
-            };
-          })(f);
-
-          // Read in the image file as a data URL.
-          reader.readAsDataURL(f);
-        }
-
-        nombreArchivo = document.querySelector('input[type=file]').files[0].name;//corresponde al input file 'logo'
-        //document.getElementById('nombreArchivo').innerHTML = nombreArchivo;    
-
-    }else{
-      
-      document.getElementById('msjs').innerHTML = '<div class="alert alert-warning alert-dismissible fade show" role="alert"><strong>¡Disculpe!</strong> El tamaño del archivo debe ser menor a 500MB.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
-    }
-
-  }
-
-
-
-
-
-
-
 function mostrarThumbnail(){
 
   if(validate() == true){
 
-    document.getElementById('list').innerHTML = "";
+    document.getElementById('list').innerHTML = '<div id="cargando"><div class="d-flex justify-content-center"><div class="loader loader-primary"></div></div></div>';
+
     document.getElementById('displayImagen').style.display = "inline";  
 
     var file = event.target.files[0];
@@ -99,6 +46,7 @@ function mostrarThumbnail(){
         img.classList.add("img-thumbnail");
         //document.getElementsByTagName('div')[0].appendChild(img);
 
+        document.getElementById('list').innerHTML = '';
         document.getElementById('list').appendChild(img);
 
       };
@@ -148,6 +96,7 @@ function mostrarThumbnail(){
             img.classList.add("img-thumbnail");
             
             //document.getElementsByTagName('div')[0].appendChild(img);
+            document.getElementById('list').innerHTML = '';
             document.getElementById('list').appendChild(img);
             URL.revokeObjectURL(url);
 
