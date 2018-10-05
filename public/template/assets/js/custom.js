@@ -386,7 +386,7 @@ function recorrerTimeline(timelineArray) {
         case 'jpeg':
         case '.jpg':
         case '.png':
-            ruta = '<p class="text-center mb-3"><img src="storage/'+element['archivo']+'" alt="..." class="img-fluid rounded" style="max-width: 100%; height: auto;"></p>'; 
+            ruta = '<p class="text-center mb-3"><img src="storage/'+element['archivo']+'" alt="..." class="img-fluid rounded" style="max-width: 100%; width: 600px; height: auto;"></p>'; 
             break;
         case '.mp4':
             ruta = '<div class="embed-responsive embed-responsive-16by9">';
