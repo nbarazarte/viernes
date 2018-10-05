@@ -112,29 +112,19 @@
                           </label>
                         </div> 
 
-                        <div id="displayImagen" class="card">
-                          <div class="card-body">
+                        <div id="displayImagen" class="row align-items-center">
 
-                            <div class="row align-items-center">
+                          <div class="alert alert-light" role="alert">
 
-                              <div class="col ml--2">
-
-                                <div class="text-center">
-
-                                    <button id="cerrarDisplayImagen" type="button" class="close" aria-label="Close" title="Quitar">
-                                      <span aria-hidden="true">&times;</span>
-                                    </button>          
-
-                                  <div id="list"></div>
-                                
-                                </div>
-                                
-                              </div>
-
-                            </div>
+                            <button id="cerrarDisplayImagen" type="button" class="close" aria-label="Close" title="Quitar">
+                              <span aria-hidden="true" style="color: #000000"><i class="far fa-times-circle"></i></span>
+                            </button>  
+                              
+                            <div id="list" class="text-center"></div>
 
                           </div>
-                        </div>
+
+                        </div>                        
 
                     </div> 
 
@@ -233,7 +223,7 @@
                                   case 'jpeg':
                                   case '.jpg':
                                   case '.png':
-                                      $ruta = '<p class="text-center mb-3"><img src="storage/'.$dato['archivo'].'" alt="..." class="img-fluid rounded" style="max-width: 100%; height: auto;"></p>'; 
+                                      $ruta = '<p class="text-center mb-3"><img src="storage/'.$dato['archivo'].'" alt="..." class="img-fluid rounded" style="max-width: 100%; width: 600px; height: auto;"></p>'; 
                                   break;
                                   case '.mp4':
                                       $ruta = '<div class="embed-responsive embed-responsive-16by9">';
