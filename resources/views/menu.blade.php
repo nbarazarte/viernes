@@ -1,12 +1,12 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link" href="{{ route('welcome') }}">
-                Inicio
+                @lang('index.Inicio')
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('servicios') }}">
-                Servicios
+                @lang('index.Servicios')
               </a>
             </li>            
             <li class="nav-item dropdown">

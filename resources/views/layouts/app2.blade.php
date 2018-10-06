@@ -288,7 +288,7 @@
             <ul class="navbar-nav align-items-center mr-0">
               <li>
                 <a class="nav-link" href="{{ route('login')}}" >
-                  Iniciar Sesión 
+                  @lang('index.Iniciar_Sesión')
                 </a>
 
               </li>
@@ -595,9 +595,9 @@
 
             <!-- Menu -->
             <div class="dropdown-menu dropdown-menu-right">
-              <a href="#" class="dropdown-item">Mi Cuenta</a>
+              <a href="#" class="dropdown-item">@lang('index.Mi_Cuenta')</a>
               <hr class="dropdown-divider">
-              <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Salir</a>
+              <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">@lang('index.Salir')</a>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                       {{ csrf_field() }}
                   </form>
