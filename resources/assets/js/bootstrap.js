@@ -12,8 +12,7 @@ try {
 
     //require('bootstrap-sass');
     require('bootstrap');
-    require('select2');
-    require('dropzone');
+    require('jquery-mask-plugin');
 } catch (e) {}
 
 /**

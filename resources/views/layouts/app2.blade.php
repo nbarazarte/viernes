@@ -634,9 +634,10 @@
     
     <!-- Libs JS -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <!-- Libs JS -->
     <!--
       <script src="templateDashkit/assets/libs/jquery/dist/jquery.min.js"></script>
-      <script src="templateDashkit/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>    
+      <script src="templateDashkit/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     -->
     <script src="templateDashkit/assets/libs/chart.js/dist/Chart.min.js"></script>
     <script src="templateDashkit/assets/libs/chart.js/Chart.extension.min.js"></script>
@@ -645,11 +646,8 @@
     <script src="templateDashkit/assets/libs/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
     <script src="templateDashkit/assets/libs/list.js/dist/list.min.js"></script>
     <script src="templateDashkit/assets/libs/quill/dist/quill.min.js"></script>
-    
-    <!--
-      <script src="templateDashkit/assets/libs/dropzone/dist/min/dropzone.min.js"></script>
-      <script src="templateDashkit/assets/libs/select2/dist/js/select2.min.js"></script>
-    -->
+    <script src="templateDashkit/assets/libs/dropzone/dist/min/dropzone.min.js"></script>
+    <script src="templateDashkit/assets/libs/select2/dist/js/select2.min.js"></script>
 
     <!-- Theme JS -->
     <script src="templateDashkit/assets/js/theme.min.js"></script>
