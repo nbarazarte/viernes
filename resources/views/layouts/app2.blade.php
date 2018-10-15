@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="templateDashkit/assets/libs/flatpickr/dist/flatpickr.min.css">
 
     {!! Html::style('template/assets/css/custom.css') !!}
-    {!! Html::style('templateDashkit/assets/scss/custom.scss') !!}
 
     <!-- Theme CSS -->
     <!-- Values are "toggle", "light", and "dark". See "Getting Started" for more information -->
