@@ -1,13 +1,4 @@
    // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCBiTzsclQXinCB02WndDyQY31OWWcLmSU",
-    authDomain: "guauser-b34cf.firebaseapp.com",
-    databaseURL: "https://guauser-b34cf.firebaseio.com",
-    projectId: "guauser-b34cf",
-    storageBucket: "guauser-b34cf.appspot.com",
-    messagingSenderId: "392674517259"
-  };
-  firebase.initializeApp(config);
 
   var database = firebase.database();
   var ref = database.ref('timeline');

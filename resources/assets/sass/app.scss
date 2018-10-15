@@ -6,4 +6,19 @@
 @import "variables";
 
 // Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+//@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+//Select2
+@import "~select2/dist/css/select2.min.css";
+
+// Flatpickr
+@import "~flatpickr/dist/flatpickr.min.css";
+
+// Quill
+@import "~quill/dist/quill.core.css";
+
+// Highlight
+@import "~highlight.js/styles/vs2015.css";
+
+// Fontawesone
+@import "~@fortawesome/fontawesome-free/css/all.css";

@@ -14,13 +14,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Libs CSS -->
-    <link rel="stylesheet" href="templateDashkit/assets/fonts/feather/feather.min.css">
-    <link rel="stylesheet" href="templateDashkit/assets/libs/highlight/styles/vs2015.min.css">
-    <link rel="stylesheet" href="templateDashkit/assets/libs/quill/dist/quill.core.css">
-    <link rel="stylesheet" href="templateDashkit/assets/libs/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" href="templateDashkit/assets/libs/flatpickr/dist/flatpickr.min.css">
-
+    <!-- Libs CSS -->    
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="templateDashkit/assets/fonts/feather/feather.min.css">    
+    
     {!! Html::style('template/assets/css/custom.css') !!}
 
     <!-- Theme CSS -->
@@ -29,8 +26,6 @@
     
     <link href="templateDashkit/assets/css/theme-dark.min.css" rel="" data-toggle="theme" data-theme-mode="dark">
     <link href="templateDashkit/assets/css/theme.min.css" rel="" data-toggle="theme" data-theme-mode="light">
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">    
 
     <style>
       body { display: none; }
@@ -624,34 +619,18 @@
       </div> <!-- / .container -->
     </nav>
 
-
   @yield('content')
-
-
 
     <!-- JAVASCRIPT
     ================================================== -->
     
     <!-- Libs JS -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <!-- Libs JS -->
-    <!--
-      <script src="templateDashkit/assets/libs/jquery/dist/jquery.min.js"></script>
-      <script src="templateDashkit/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    -->
+    <script src="{{ asset('js/app.js') }}"></script>    
     <script src="templateDashkit/assets/libs/chart.js/dist/Chart.min.js"></script>
     <script src="templateDashkit/assets/libs/chart.js/Chart.extension.min.js"></script>
-    <script src="templateDashkit/assets/libs/highlight/highlight.pack.min.js"></script>
-    <script src="templateDashkit/assets/libs/flatpickr/dist/flatpickr.min.js"></script>
-    <script src="templateDashkit/assets/libs/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-    <script src="templateDashkit/assets/libs/list.js/dist/list.min.js"></script>
-    <script src="templateDashkit/assets/libs/quill/dist/quill.min.js"></script>
-    <script src="templateDashkit/assets/libs/dropzone/dist/min/dropzone.min.js"></script>
-    <script src="templateDashkit/assets/libs/select2/dist/js/select2.min.js"></script>
-
+        
     <!-- Theme JS -->
     <script src="templateDashkit/assets/js/theme.min.js"></script>
-
 
     <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
     <!-- Load Facebook SDK for JavaScript -->
@@ -668,10 +647,10 @@
       }(document, 'script', 'facebook-jssdk'));
     </script>    
 
-    @if (Route::current()->getName() == 'welcome')
-      <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    @if (Route::current()->getName() == 'welcome')     
  
       {!! Html::script('template/assets/js/custom.js') !!}
+
     @endif    
 
   </body>
