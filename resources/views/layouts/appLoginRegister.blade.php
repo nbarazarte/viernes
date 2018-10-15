@@ -9,11 +9,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">    
 
     <!-- Libs CSS -->
+    {!! Html::style('css/app.css') !!}
     {!! Html::style('templateDashkit/assets/fonts/feather/feather.min.css') !!}
-    {!! Html::style('templateDashkit/assets/libs/highlight/styles/vs2015.min.css') !!}
-    {!! Html::style('templateDashkit/assets/libs/quill/dist/quill.core.css') !!}
-    {!! Html::style('templateDashkit/assets/libs/select2/dist/css/select2.min.css') !!}
-    {!! Html::style('templateDashkit/assets/libs/flatpickr/dist/flatpickr.min.css') !!}
 
     <!-- Theme CSS -->
     <!-- Values are "toggle", "light", and "dark". See "Getting Started" for more information -->
@@ -53,11 +50,10 @@
       });
     </script>
      
-    
-    
-
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    {!! Html::script('https://www.google.com/recaptcha/api.js') !!}
+    
   </head>
 
   @if( Route::currentRouteName() == 'password.request')
@@ -90,17 +86,9 @@
     ================================================== -->
     
     <!-- Libs JS -->
-    {!! Html::script('templateDashkit/assets/libs/jquery/dist/jquery.min.js') !!}
-    {!! Html::script('templateDashkit/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') !!}
+    {!! Html::script('js/app.js') !!}
     {!! Html::script('templateDashkit/assets/libs/chart.js/dist/Chart.min.js') !!}
     {!! Html::script('templateDashkit/assets/libs/chart.js/Chart.extension.min.js') !!}
-    {!! Html::script('templateDashkit/assets/libs/highlight/highlight.pack.min.js') !!}
-    {!! Html::script('templateDashkit/assets/libs/flatpickr/dist/flatpickr.min.js') !!}
-    {!! Html::script('templateDashkit/assets/libs/jquery-mask-plugin/dist/jquery.mask.min.js') !!}
-    {!! Html::script('templateDashkit/assets/libs/list.js/dist/list.min.js') !!}
-    {!! Html::script('templateDashkit/assets/libs/quill/dist/quill.min.js') !!}
-    {!! Html::script('templateDashkit/assets/libs/dropzone/dist/min/dropzone.min.js') !!}
-    {!! Html::script('templateDashkit/assets/libs/select2/dist/js/select2.min.js') !!}
 
     <!-- Theme JS -->
     {!! Html::script('templateDashkit/assets/js/theme.min.js') !!}

@@ -15,9 +15,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Libs CSS -->    
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="templateDashkit/assets/fonts/feather/feather.min.css">    
-    
+    {!! Html::style('css/app.css') !!}
+    {!! Html::style('templateDashkit/assets/fonts/feather/feather.min.css') !!}    
     {!! Html::style('template/assets/css/custom.css') !!}
 
     <!-- Theme CSS -->
@@ -625,12 +624,12 @@
     ================================================== -->
     
     <!-- Libs JS -->
-    <script src="{{ asset('js/app.js') }}"></script>    
-    <script src="templateDashkit/assets/libs/chart.js/dist/Chart.min.js"></script>
-    <script src="templateDashkit/assets/libs/chart.js/Chart.extension.min.js"></script>
+    {!! Html::script('js/app.js') !!}
+    {!! Html::script('templateDashkit/assets/libs/chart.js/dist/Chart.min.js') !!}
+    {!! Html::script('templateDashkit/assets/libs/chart.js/Chart.extension.min.js') !!}
         
     <!-- Theme JS -->
-    <script src="templateDashkit/assets/js/theme.min.js"></script>
+    {!! Html::script('templateDashkit/assets/js/theme.min.js') !!}
 
     <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
     <!-- Load Facebook SDK for JavaScript -->
