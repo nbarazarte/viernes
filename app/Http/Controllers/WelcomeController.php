@@ -38,6 +38,7 @@ protected $database;
      */
     public function index()
     {        
+        /*
         //order the reference's children by their key in ascending order
         $reference = $this->database->getReference('timeline');        
         $shallow = $reference->shallow();
@@ -55,6 +56,9 @@ protected $database;
 
             return view('welcome',compact('datos'));
         }
+
+        */
+        return view('welcome');
     }
 
     /**

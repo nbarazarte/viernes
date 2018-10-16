@@ -21,18 +21,6 @@ try {
     List = require('list.js');
 } catch (e) {}
 
-window.firebase = require('firebase');
-// Initialize Firebase
-firebase.initializeApp({
-	apiKey: "AIzaSyCBiTzsclQXinCB02WndDyQY31OWWcLmSU",
-	authDomain: "guauser-b34cf.firebaseapp.com",
-	databaseURL: "https://guauser-b34cf.firebaseio.com",
-	projectId: "guauser-b34cf",
-	storageBucket: "guauser-b34cf.appspot.com",
-	messagingSenderId: "392674517259"
-});
-/***********************************************************************/
-
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
@@ -73,3 +61,15 @@ if (token) {
 //     cluster: 'mt1',
 //     encrypted: true
 // });
+
+window.firebase = require('firebase');
+// Initialize Firebase
+firebase.initializeApp({
+    apiKey: "AIzaSyCBiTzsclQXinCB02WndDyQY31OWWcLmSU",
+    authDomain: "guauser-b34cf.firebaseapp.com",
+    databaseURL: "https://guauser-b34cf.firebaseio.com",
+    projectId: "guauser-b34cf",
+    storageBucket: "guauser-b34cf.appspot.com",
+    messagingSenderId: "392674517259"
+});
+/***********************************************************************/

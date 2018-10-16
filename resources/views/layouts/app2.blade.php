@@ -23,8 +23,8 @@
     <!-- Values are "toggle", "light", and "dark". See "Getting Started" for more information -->
     <!-- Toggle Mode: For demo only, but allows a user to seamlessly toggle between light/dark modes -->
     
-    <link href="templateDashkit/assets/css/theme-dark.min.css" rel="" data-toggle="theme" data-theme-mode="dark">
-    <link href="templateDashkit/assets/css/theme.min.css" rel="" data-toggle="theme" data-theme-mode="light">
+    <link href="{{ asset('templateDashkit/assets/css/theme-dark.min.css') }}" rel="" data-toggle="theme" data-theme-mode="dark">
+    <link href="{{ asset('templateDashkit/assets/css/theme.min.css') }}" rel="" data-toggle="theme" data-theme-mode="light">
 
     <style>
       body { display: none; }
@@ -86,7 +86,7 @@
                     
                         <!-- Avatar -->
                         <div class="avatar">
-                          <img src="templateDashkit/assets/img/avatars/teams/team-logo-1.jpg" alt="..." class="avatar-img rounded">
+                          <img src="{{ asset('templateDashkit/assets/img/avatars/teams/team-logo-1.jpg') }} " alt="..." class="avatar-img rounded">
                         </div>
 
                       </div>
@@ -646,11 +646,7 @@
       }(document, 'script', 'facebook-jssdk'));
     </script>    
 
-    @if (Route::current()->getName() == 'welcome')     
- 
-      {!! Html::script('template/assets/js/custom.js') !!}
-
-    @endif    
+    {!! Html::script('template/assets/js/custom.js') !!}   
 
   </body>
 </html>

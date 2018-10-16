@@ -16,22 +16,8 @@
     <!-- Values are "toggle", "light", and "dark". See "Getting Started" for more information -->
     <!-- Toggle Mode: For demo only, but allows a user to seamlessly toggle between light/dark modes -->
 
-    @if( Route::currentRouteName() == 'password.request')
-
-      <link href="../templateDashkit/assets/css/theme-dark.min.css" rel="" data-toggle="theme" data-theme-mode="dark">
-      <link href="../templateDashkit/assets/css/theme.min.css" rel="" data-toggle="theme" data-theme-mode="light">
-
-    @elseif(Route::currentRouteName() == 'password.reset')
-
-      <link href="../../templateDashkit/assets/css/theme-dark.min.css" rel="" data-toggle="theme" data-theme-mode="dark">
-      <link href="../../templateDashkit/assets/css/theme.min.css" rel="" data-toggle="theme" data-theme-mode="light">
-
-    @else
-
-      <link href="templateDashkit/assets/css/theme-dark.min.css" rel="" data-toggle="theme" data-theme-mode="dark">
-      <link href="templateDashkit/assets/css/theme.min.css" rel="" data-toggle="theme" data-theme-mode="light">
-
-    @endif
+    <link href="{{ asset('templateDashkit/assets/css/theme-dark.min.css') }}" rel="" data-toggle="theme" data-theme-mode="dark">
+    <link href="{{ asset('templateDashkit/assets/css/theme.min.css') }}" rel="" data-toggle="theme" data-theme-mode="light">
 
     <style>
       body { display: none; }
@@ -56,19 +42,7 @@
     
   </head>
 
-  @if( Route::currentRouteName() == 'password.request')
-
-    <body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary" style="background-image: url(../templateDashkit/assets/img/covers/login.jpg);background-repeat: no-repeat;">
-
-  @elseif(Route::currentRouteName() == 'password.reset')
-
-    <body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary" style="background-image: url(../../templateDashkit/assets/img/covers/login.jpg);background-repeat: no-repeat;">
-
-  @else
-
-     <body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary" style="background-image: url(templateDashkit/assets/img/covers/login.jpg);background-repeat: no-repeat;">
-
-  @endif
+<body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary" style="background-image: url({{ asset('templateDashkit/assets/img/covers/login.jpg') }}); background-repeat: no-repeat;">
 
     <!-- CONTENT
     ================================================== -->
