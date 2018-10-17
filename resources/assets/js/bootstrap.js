@@ -73,3 +73,7 @@ firebase.initializeApp({
     messagingSenderId: "392674517259"
 });
 /***********************************************************************/
+
+window.publicIp = require('public-ip');
+
+window.iplocation = require('iplocation');

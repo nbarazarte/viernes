@@ -477,3 +477,32 @@ function validate(){
 
   return true;
 }
+
+publicIp.v4().then(ip => {
+  console.log(ip);   
+  //iplocation('56.70.97.8', function (error, res) {
+  //iplocation('190.76.34.91', function (error, res) {
+  iplocation(ip, function (error, res) {    
+  console.log(res);  
+    /* res:
+
+      {
+        as: 'AS11286 KeyBank National Association',
+        city: 'Cleveland',
+        country: 'United States',
+        countryCode: 'US',
+        isp: 'KeyBank National Association',
+        lat: 41.4875,
+        lon: -81.6724,
+        org: 'KeyBank National Association',
+        query: '156.77.54.32',
+        region: 'OH',
+        regionName: 'Ohio',
+        status: 'success',
+        timezone: 'America/New_York',
+        zip: '44115'
+      }
+
+    */
+  })
+});
