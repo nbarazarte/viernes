@@ -175,8 +175,9 @@ function pmp(){//publicar
     nombre = "";
   }
 
+  var id = firebase.database().ref().child('timeline').push().key;
   var data = {
-
+    id: id,
     str_categoria: categoria,
     txt_descripcion: document.getElementById('txt_descripcion').value,
     lng_idusuario: document.getElementById('lng_idusuario').value,
@@ -188,7 +189,8 @@ function pmp(){//publicar
     str_hora: hora, 
   }
 
-  ref.push(data);
+  //ref.push(data);
+  firebase.database().ref('timeline/'+id).set(data);
 
   document.getElementById('txt_descripcion').value = "";
   document.getElementById('logo').value = "";  
