@@ -123,22 +123,6 @@ document.getElementById("btnpmp").addEventListener("click", pmp);
 
 function pmp(){//publicar  
 
-  //sube la imágen por ajax:
-  $.ajax({
-      url:'/upload',
-      data:new FormData($("#archivoForm")[0]),
-      dataType:'json',
-      async:false,
-      type:'post',
-      processData: false,
-      contentType: false,
-      success:function(response){
-        //console.log(response);
-        //var str = JSON.stringify(response, null, 2); // spacing level = 2
-        //document.getElementById('miPrueba').innerHTML = str;//el div habria que crearlo
-      },
-    });
-
   //guarda los datos en firebase:
   var categoria;
   var nombreArchivo;
@@ -167,6 +151,22 @@ function pmp(){//publicar
 
   if(document.getElementById('logo').value != ""){
 
+    //sube la imágen por ajax:
+    $.ajax({
+        url:'/upload',
+        data:new FormData($("#archivoForm")[0]),
+        dataType:'json',
+        async:false,
+        type:'post',
+        processData: false,
+        contentType: false,
+        success:function(response){
+          //console.log(response);
+          //var str = JSON.stringify(response, null, 2); // spacing level = 2
+          //document.getElementById('miPrueba').innerHTML = str;//el div habria que crearlo
+        },
+      });
+  
     nombreArchivo = document.querySelector('input[type=file]').files[0].name;//corresponde al input file 'logo'        
     nombre = document.getElementById('lng_idusuario').value+"_"+nombreArchivo;
 
