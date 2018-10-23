@@ -8,7 +8,7 @@
   var contNuevaspublicaciones = 0;
 
   var cajaPublicaciones = document.getElementById('publicaciones');
-  var todoTimeline;
+  var timeline;
   
   ref.once('value',gotData, errData);//se llama una sola vez a la funcion gotData para cargar el time line
   ref.on('value',oneData, errData);//se llama cada vez que hay un elemento nuevo o eliminado en el time line de la base de datos
@@ -207,13 +207,9 @@ function gotData(data){
 
   if(data.val() != null){
 
-    var timeline = data.val();
-    var keys = Object.keys(timeline);
-    //console.log(keys);
-    var timelineArray = Object.values(timeline);
-    //console.log(timelineArray.reverse());
+    timeline = data.val();
 
-    recorrerTimeline(timelineArray);
+    recorrerTimeline();
   }else{
     setTimeout('cargarndoNone()',200)
   }
@@ -228,53 +224,20 @@ function oneData(data){
 
   if ((contOnce == 1 ) && (contOn > 1)) {
 
-  /*
-    //para saber el primero
-    var group = ["a","b","c","d","e"];
-    var groupLength = group.length;
+    timeline = data.val();
 
-    while (groupLength--) {
-        var item = group[groupLength];
+    contNuevaspublicaciones = contNuevaspublicaciones + 1;
 
-        if(groupLength == 0){
-            console.log("Last iteration with item : " + item);
-        }
+    if(contNuevaspublicaciones > 1){
+
+      document.getElementById('contNuevaspublicaciones').innerHTML = contNuevaspublicaciones + " nuevos mensajes";
+
+    }else{
+
+      document.getElementById('contNuevaspublicaciones').innerHTML = contNuevaspublicaciones + " nuevo mensaje";
     }
-  */
 
-    todoTimeline = data.val();
-
-    var timeline = data.val();
-    var keys = Object.keys(timeline);
-    //console.log(keys);
-    var timelineArray = Object.values(timeline);
-    //console.log(timelineArray.reverse());
-
-    //para saber el último
-    var group = timelineArray;//["a","b","c","d","e"];
-    var groupLength = group.length;
-
-    for(var i = 0;i < groupLength;i++){
-        var element = group[i];
-
-      // Do something if is the last iteration of the array
-      if((i + 1) == (groupLength)){
-        //console.log("Last iteration with element : " + element['txt_descripcion']);
-
-        contNuevaspublicaciones = contNuevaspublicaciones + 1;
-
-        if(contNuevaspublicaciones > 1){
-
-          document.getElementById('contNuevaspublicaciones').innerHTML = contNuevaspublicaciones + " nuevos mensajes";
-
-        }else{
-
-          document.getElementById('contNuevaspublicaciones').innerHTML = contNuevaspublicaciones + " nuevo mensaje";
-        }
-
-        document.getElementById('msjNuevaspublicaciones').style.display = "inline";
-      }
-    }
+    document.getElementById('msjNuevaspublicaciones').style.display = "inline";
   }
 }
 
@@ -291,16 +254,15 @@ function mensajes(){
   
   contNuevaspublicaciones = 0;
 
-  var timeline = todoTimeline;
-  var keys = Object.keys(timeline);
+  recorrerTimeline();
+}
+
+function recorrerTimeline() {
+
+  //var keys = Object.keys(timeline);
   //console.log(keys);
   var timelineArray = Object.values(timeline);
   //console.log(timelineArray.reverse());
-
-  recorrerTimeline(timelineArray);
-}
-
-function recorrerTimeline(timelineArray) {
 
     document.getElementById('cargando').style.display = "inline";
 
