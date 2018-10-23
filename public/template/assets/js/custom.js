@@ -17,7 +17,7 @@
 document.getElementById('logo').addEventListener('change', mostrarThumbnail, false);
 
 //coloca la miniatura de la imágen:
-function mostrarThumbnail(){
+function mostrarThumbnail(e){
 
   if(validate() == true){
 
@@ -25,7 +25,7 @@ function mostrarThumbnail(){
 
     document.getElementById('displayImagen').style.display = "inline";  
 
-    var file = event.target.files[0];
+    var file = e.target.files[0];
     var fileReader = new FileReader();
 
     if (file.type.match('image')) {
