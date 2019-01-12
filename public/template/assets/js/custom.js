@@ -356,7 +356,7 @@ function recorrerTimeline() {
     elementos +='                            <div class="row align-items-center">';
     elementos +='                              <div class="col-auto">';
     elementos +='                                ';
-    elementos +='                                <a href="#!" class="avatar">';
+    elementos +='                                <a href="" class="avatar">';
     elementos +=                                  avatar;
     elementos +='                                </a>';
     elementos +='                              </div>';
@@ -370,11 +370,11 @@ function recorrerTimeline() {
     elementos +='                              </div>';
     elementos +='                              <div class="col-auto">';
     elementos +='                                <div class="dropdown">';
-    elementos +='                                  <a href="#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+    elementos +='                                  <a href="" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
     elementos +='                                    <i class="fe fe-more-vertical"></i>';
     elementos +='                                  </a>';
     elementos +='                                  <div class="dropdown-menu dropdown-menu-right">';
-    elementos +='                                    <a href="#!" class="dropdown-item">';
+    elementos +='                                    <a href="" class="dropdown-item">';
     elementos +='                                      Action';
     elementos +='                                    </a>';
     elementos +='                                  </div>';
@@ -389,10 +389,10 @@ function recorrerTimeline() {
     elementos +='                          <div class="mb-3">';
     elementos +='                            <div class="row">';
     elementos +='                              <div class="col">';
-    elementos +='                                <a href="#!" class="btn btn-sm btn-white">';
+    elementos +='                                <a href="" class="btn btn-sm btn-white">';
     elementos +='                                  <i class="far fa-smile"></i> 1';
     elementos +='                                </a>';
-    elementos +='                                <a href="#!" class="btn btn-sm btn-white">';
+    elementos +='                                <a href="" class="btn btn-sm btn-white">';
     elementos +='                                  <i class="far fa-angry"></i> 0';
     elementos +='                                </a>                                ';
     elementos +='                              </div>';

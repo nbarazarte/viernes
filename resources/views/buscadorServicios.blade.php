@@ -51,7 +51,7 @@
                         <div class="col-auto">
                           
                           <!-- Avatar -->
-                          <a href="#!" class="avatar">
+                          <a href="" class="avatar">
                             <img src="templateDashkit/assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle" title="Jaennie Pineda">
                           </a>
 
@@ -60,7 +60,7 @@
 
                           <!-- Title -->
                           <h5 class="mb-1 name">
-                            <a href="#!">Programador Web</a>
+                            <a href="">Programador Web</a>
                           </h6>
 
                           <!-- Time -->
@@ -72,7 +72,7 @@
                         <div class="col-auto">
                           
                           <!-- Button -->
-                          <a href="#!" class="btn btn-sm btn-white" title="Contactar">
+                          <a href="" class="btn btn-sm btn-white" title="Contactar">
                             <span class="fe fe-message-circle"></span>
                           </a>
 
@@ -84,7 +84,7 @@
                         <div class="col-auto">
                           
                           <!-- Avatar -->
-                          <a href="#!" class="avatar">
+                          <a href="" class="avatar">
                             <img src="templateDashkit/assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle" title="Rosciel Granadillo">
                           </a>
 
@@ -93,7 +93,7 @@
 
                           <!-- Title -->
                           <h5 class="mb-1 name">
-                            <a href="#!">Maquilladora</a>
+                            <a href="">Maquilladora</a>
                           </h5>
 
                           <!-- Time -->
@@ -105,7 +105,7 @@
                         <div class="col-auto">
                           
                           <!-- Button -->
-                          <a href="#!" class="btn btn-sm btn-white" title="Contactar">
+                          <a href="" class="btn btn-sm btn-white" title="Contactar">
                             <span class="fe fe-message-circle"></span>
                           </a>
 
@@ -117,7 +117,7 @@
                         <div class="col-auto">
                           
                           <!-- Avatar -->
-                          <a href="#!" class="avatar">
+                          <a href="" class="avatar">
                             <img src="templateDashkit/assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle" title="Angela Pérez">
                           </a>
 
@@ -126,7 +126,7 @@
 
                           <!-- Title -->
                           <h5 class="mb-1 name">
-                            <a href="#!">Diseñador Gráfico</a>
+                            <a href="">Diseñador Gráfico</a>
                           </h5>
 
                           <!-- Time -->
@@ -138,7 +138,7 @@
                         <div class="col-auto">
                           
                           <!-- Button -->
-                          <a href="#!" class="btn btn-sm btn-white" title="Contactar">
+                          <a href="" class="btn btn-sm btn-white" title="Contactar">
                             <span class="fe fe-message-circle"></span>
                           </a>
 
@@ -150,7 +150,7 @@
                         <div class="col-auto">
                           
                           <!-- Avatar -->
-                          <a href="#!" class="avatar">
+                          <a href="" class="avatar">
                             <img src="templateDashkit/assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle" title="Julio Gonzáles">
                           </a>
 
@@ -159,7 +159,7 @@
 
                           <!-- Title -->
                           <h5 class="mb-1 name">
-                            <a href="#!">Abogado</a>
+                            <a href="">Abogado</a>
                           </h5>
 
                           <!-- Time -->
@@ -171,7 +171,7 @@
                         <div class="col-auto">
                           
                           <!-- Button -->
-                          <a href="#!" class="btn btn-sm btn-white" title="Contactar">
+                          <a href="" class="btn btn-sm btn-white" title="Contactar">
                             <span class="fe fe-message-circle"></span>
                           </a>
 
@@ -183,7 +183,7 @@
                         <div class="col-auto">
                           
                           <!-- Avatar -->
-                          <a href="#!" class="avatar">
+                          <a href="" class="avatar">
                             <img src="templateDashkit/assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle" title="Marlon Bracamonte">
                           </a>
 
@@ -192,7 +192,7 @@
 
                           <!-- Title -->
                           <h5 class="mb-1 name">
-                            <a href="#!">Moto Taxista</a>
+                            <a href="">Moto Taxista</a>
                           </h5>
 
                           <!-- Time -->
@@ -204,7 +204,7 @@
                         <div class="col-auto">
                           
                           <!-- Button -->
-                          <a href="#!" class="btn btn-sm btn-white" title="Contactar">
+                          <a href="" class="btn btn-sm btn-white" title="Contactar">
                             <span class="fe fe-message-circle"></span>
                           </a>
 
@@ -216,7 +216,7 @@
                         <div class="col-auto">
                           
                           <!-- Avatar -->
-                          <a href="#!" class="avatar">
+                          <a href="" class="avatar">
                             <img src="templateDashkit/assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle" title="Danilo Ribas">
                           </a>
 
@@ -225,7 +225,7 @@
 
                           <!-- Title -->
                           <h5 class="mb-1 name">
-                            <a href="#!">Estilista</a>
+                            <a href="">Estilista</a>
                           </h5>
 
                           <!-- Time -->
@@ -237,7 +237,7 @@
                         <div class="col-auto">
                           
                           <!-- Button -->
-                          <a href="#!" class="btn btn-sm btn-white" title="Contactar">
+                          <a href="" class="btn btn-sm btn-white" title="Contactar">
                             <span class="fe fe-message-circle"></span>
                           </a>
 
@@ -249,7 +249,7 @@
                         <div class="col-auto">
                           
                           <!-- Avatar -->
-                          <a href="#!" class="avatar">
+                          <a href="" class="avatar">
                             <img src="templateDashkit/assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle" title="Maritza Aché">
                           </a>
 
@@ -258,7 +258,7 @@
 
                           <!-- Title -->
                           <h5 class="mb-1 name">
-                            <a href="#!">Costurera</a>
+                            <a href="">Costurera</a>
                           </h5>
 
                           <!-- Time -->
@@ -270,7 +270,7 @@
                         <div class="col-auto">
                           
                           <!-- Button -->
-                          <a href="#!" class="btn btn-sm btn-white" title="Contactar">
+                          <a href="" class="btn btn-sm btn-white" title="Contactar">
                             <span class="fe fe-message-circle"></span>
                           </a>
 
@@ -282,7 +282,7 @@
                         <div class="col-auto">
                           
                           <!-- Avatar -->
-                          <a href="#!" class="avatar">
+                          <a href="" class="avatar">
                             <img src="templateDashkit/assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle" title="Jesús Céspedes">
                           </a>
 
@@ -291,7 +291,7 @@
 
                           <!-- Title -->
                           <h5 class="mb-1 name">
-                            <a href="#!">Plomero</a>
+                            <a href="">Plomero</a>
                           </h5>
 
                           <!-- Time -->
@@ -303,7 +303,7 @@
                         <div class="col-auto">
                           
                           <!-- Button -->
-                          <a href="#!" class="btn btn-sm btn-white" title="Contactar">
+                          <a href="" class="btn btn-sm btn-white" title="Contactar">
                             <span class="fe fe-message-circle"></span>
                           </a>
 
@@ -315,7 +315,7 @@
                         <div class="col-auto">
                           
                           <!-- Avatar -->
-                          <a href="#!" class="avatar">
+                          <a href="" class="avatar">
                             <img src="templateDashkit/assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle" title="Jóse Yépez">
                           </a>
 
@@ -324,7 +324,7 @@
 
                           <!-- Title -->
                           <h5 class="mb-1 name">
-                            <a href="#!">Moto Taxista</a>
+                            <a href="">Moto Taxista</a>
                           </h5>
 
                           <!-- Time -->
@@ -336,7 +336,7 @@
                         <div class="col-auto">
                           
                           <!-- Button -->
-                          <a href="#!" class="btn btn-sm btn-white" title="Contactar">
+                          <a href="" class="btn btn-sm btn-white" title="Contactar">
                             <span class="fe fe-message-circle"></span>
                           </a>
 

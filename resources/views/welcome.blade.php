@@ -40,10 +40,10 @@
       </div> <!-- / .header -->
       
       <!-- CARDS -->
-      <div class="container mt--6">
+      <div class="container mt--9">
 
         <div class="row">
-          <div class="col-12 col-lg-6 col-xl">
+          <div class="col-6 col-lg-6 col-xl">
             
             <!-- Card -->
             <div class="card">
@@ -79,7 +79,7 @@
             </div>
 
           </div>
-          <div class="col-12 col-lg-6 col-xl">
+          <div class="col-6 col-lg-6 col-xl">
             
             <!-- Card -->
             <div class="card">
@@ -110,7 +110,7 @@
             </div>
               
           </div>
-          <div class="col-12 col-lg-6 col-xl">
+          <div class="col-6 col-lg-6 col-xl">
             
             <!-- Card -->
             <div class="card">
@@ -155,7 +155,7 @@
             </div>
               
           </div>
-          <div class="col-12 col-lg-6 col-xl">
+          <div class="col-6 col-lg-6 col-xl">
             
             <!-- Card -->
             <div class="card">
@@ -186,21 +186,71 @@
             </div>
               
           </div>
-        </div> <!-- / .row -->
-        <div class="row">
+        </div> <!-- / .row -->     
 
-          <!-- buscadorServicios -->
-          @include('buscadorServicios')
+          @desktop
+              
+            <div class="row">
+              
+              <!-- buscadorServicios -->
+              @include('buscadorServicios')
 
-          <!-- Time Line -->
-          @include('timeLine')
+              <!-- Time Line -->
+              @include('timeLine')
 
-          <!-- Eventos -->
-          @include('eventos')
+              <!-- Eventos -->
+              @include('eventos')
 
-        </div> <!-- / .row -->
+            </div>
+
+          @elsedesktop
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#Social" role="tab" aria-controls="home" aria-selected="true">Social</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Chat" role="tab" aria-controls="profile" aria-selected="false">Chat</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#Hot" role="tab" aria-controls="contact" aria-selected="false">Lo más hot</a>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="myTabContent">
+
+              <div class="tab-pane fade show active" id="Social" role="tabpanel" aria-labelledby="home-tab">
+                
+                  <div class="row">
+                    <!-- Time Line -->
+                    @include('timeLine')
+                  </div>
+              </div>
+
+              <div class="tab-pane fade" id="Chat" role="tabpanel" aria-labelledby="profile-tab">
+                
+                  <div class="row">
+                    <!-- buscadorServicios -->
+                    @include('buscadorServicios')
+                  </div>
+
+              </div>
+
+              <div class="tab-pane fade" id="Hot" role="tabpanel" aria-labelledby="contact-tab">
+                  
+                  <div class="row">
+                    <!-- Eventos -->
+                    @include('eventos')
+                  </div>
+
+              </div>
+
+            </div>
+              
+          @enddesktop
+
       </div> <!-- / .container -->
 
     </div> <!-- / .main-content -->
 
-@endsection    
+@endsection

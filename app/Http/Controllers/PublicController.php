@@ -14,6 +14,7 @@ class PublicController extends Controller
      */
     public function index()
     {
-        return view('servicios');
+        //return view('servicios');
+        return view('home');
     }
 }

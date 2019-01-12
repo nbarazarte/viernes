@@ -24,7 +24,7 @@
 
                     <div class="col-auto">
                       
-                      <a href="#!" class="avatar">                       
+                      <a href="" class="avatar">                       
 
                         @if(empty(Auth::user()->avatar))
                           
@@ -82,7 +82,7 @@
 
                     <div class="col-auto">
                       
-                        <a href="#!" class="btn btn-rounded-circle btn-primary btn-sm" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <a href="" class="btn btn-rounded-circle btn-primary btn-sm" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                           <span class="fe fe-corner-down-left"></span>
                         </a> 
 
@@ -159,12 +159,54 @@
                     @if(isset($datos))
 
                       @foreach(array_reverse($datos) as $dato)
+                  
+                        @switch ($dato['str_categoria'])
+        
+                          @case ('Entretenimiento')
+                              <?php $clase = 'badge badge-primary';?>
+                              @break
+                          @case ('Tecnología')
+                              <?php $clase = 'badge badge-secondary';?>
+                              @break
+                          @case ('Noticias')
+                              <?php $clase = 'badge badge-success';?>
+                              @break
+                          @case ('Servicios')
+                              <?php $clase = 'badge badge-info';?>
+                              @break
+                          @case ('Política')
+                              <?php $clase = 'badge badge-warning';?>
+                              @break
+                          @case ('Deportes')
+                              <?php $clase = 'badge badge-danger';?>
+                              @break
+                          @case ('Religión')
+                              <?php $clase = 'badge badge-light';?>
+                              @break
+                          @case ('Economía')
+                              <?php $clase = 'badge badge-dark';?>
+                              @break
+                          @case ('Mascotas')
+                              <?php $clase = 'badge badge-secondary';?>
+                              @break
+                          @case ('Salud')
+                              <?php $clase = 'badge badge-secondary';?>
+                              @break
+                          @case ('Sexo')
+                              <?php $clase = 'badge badge-secondary';?>
+                              @break
+                          @case ('Ninguna')
+                              <?php $clase = ''; ?>
+                              @break                           
+                          @default
+                              <?php $clase = ''; ?>                
+                       @endswitch
 
                           <div class="mb-3">
                             <div class="row align-items-center">
                               <div class="col-auto">
                                 
-                                <a href="#!" class="avatar">
+                                <a href="" class="avatar">
 
                                    @if(empty($dato['avatar_usuario']))
 
@@ -186,7 +228,7 @@
                                 </h4>
 
                                 <p class="card-text small text-muted">
-                                  <span class="badge badge-light"> {{ $dato['str_categoria'] }}</span>
+                                  <span class="{{ $clase }}"> {{ $dato['str_categoria'] }}</span>
                                   <span class="fe fe-calendar"></span>
                                   {{ $dato['str_fecha_publicacion'] }} 
                                   
@@ -198,11 +240,11 @@
                               <div class="col-auto">
                                 
                                 <div class="dropdown">
-                                  <a href="#!" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <a href="" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fe fe-more-vertical"></i>
                                   </a>
                                   <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="#!" class="dropdown-item">
+                                    <a href="" class="dropdown-item">
                                       Action
                                     </a>
                                   </div>
@@ -218,23 +260,35 @@
 
                                 $str = $dato['archivo'];
                                 $file_type = substr($str,-4);
-                              
-                                switch($file_type) {
-                                  case 'jpeg':
-                                  case '.jpg':
-                                  case '.png':
-                                      $ruta = '<p class="text-center mb-3"><img src="storage/'.$dato['archivo'].'" alt="..." class="img-fluid rounded" style="max-width: 100%; width: 600px; height: auto;"></p>'; 
-                                  break;
-                                  case '.mp4':
+                              ?>
+
+                                @switch($file_type)
+
+                                  @case ('jpeg')
+                                  @case ('.jpg')
+                                  @case ('.png')
+
+                                      <?php
+                                      
+                                        $ruta = '<p class="text-center mb-3"><img src="storage/'.$dato['archivo'].'" alt="..." class="img-fluid rounded" style="max-width: 100%; width: 600px; height: auto;"></p>'; 
+                                      ?>
+
+                                  @break
+
+                                  @case ('.mp4')
+
+                                    <?php
+
                                       $ruta = '<div class="embed-responsive embed-responsive-16by9">';
                                       //$ruta +=   '<iframe class="embed-responsive-item" src="storage/'.$dato['archivo'].'" allowfullscreen></iframe>';
                                       $ruta .= '<video controls="controls" controlsList="nodownload" preload="metadata"><source src="storage/'.$dato['archivo'].'" type="video/mp4"></video>';
                                       $ruta .= '</div>';
-                                  break;          
-                                } 
+                                    ?>
 
-                            ?>
+                                  @break;
 
+                                @endswitch 
+                          
                             {!! $ruta !!}                
 
                           @endif    
@@ -247,11 +301,11 @@
                             <div class="row">
                               <div class="col">
 
-                                <a href="#!" class="btn btn-sm btn-white">
+                                <a href="" class="btn btn-sm btn-white">
                                   <i class="far fa-smile"></i> 1
                                 </a>
 
-                                <a href="#!" class="btn btn-sm btn-white">
+                                <a href="" class="btn btn-sm btn-white">
                                   <i class="far fa-angry"></i> 0
                                 </a>                                
 

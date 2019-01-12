@@ -294,7 +294,7 @@
           <div class="dropdown mr-4 d-none d-lg-flex">
         
             <!-- Toggle -->
-            <a href="dashboard-topnav.html#" class="text-muted" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="" class="text-muted" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="icon active">
                 <i class="fe fe-bell"></i>
               </span>
@@ -315,7 +315,7 @@
                   <div class="col-auto">
                 
                     <!-- Link -->
-                    <a href="dashboard-topnav.html#!" class="small">
+                    <a href="" class="small">
                       View all
                     </a>
 
@@ -326,7 +326,7 @@
 
                 <!-- List group -->
                 <div class="list-group list-group-flush my--3">
-                  <a class="list-group-item px-0" href="dashboard-topnav.html#!">
+                  <a class="list-group-item px-0" href="!">
               
                     <div class="row">
                       <div class="col-auto">
@@ -355,7 +355,7 @@
                     </div> <!-- / .row -->
 
                   </a>
-                  <a class="list-group-item px-0" href="dashboard-topnav.html#!">
+                  <a class="list-group-item px-0" href="!">
 
                     <div class="row">
                       <div class="col-auto">
@@ -384,7 +384,7 @@
                     </div> <!-- / .row -->
 
                   </a>
-                  <a class="list-group-item px-0" href="dashboard-topnav.html#!">
+                  <a class="list-group-item px-0" href="!">
 
                     <div class="row">
                       <div class="col-auto">
@@ -413,7 +413,7 @@
                     </div> <!-- / .row -->
 
                   </a>
-                  <a class="list-group-item px-0" href="dashboard-topnav.html#!">
+                  <a class="list-group-item px-0" href="!">
 
                     <div class="row">
                       <div class="col-auto">
@@ -442,7 +442,7 @@
                     </div> <!-- / .row -->
 
                   </a>
-                  <a class="list-group-item px-0" href="dashboard-topnav.html#!">
+                  <a class="list-group-item px-0" href="!">
 
                     <div class="row">
                       <div class="col-auto">
@@ -471,7 +471,7 @@
                     </div> <!-- / .row -->
 
                   </a>
-                  <a class="list-group-item px-0" href="dashboard-topnav.html#!">
+                  <a class="list-group-item px-0" href="!">
 
                     <div class="row">
                       <div class="col-auto">
@@ -500,7 +500,7 @@
                     </div> <!-- / .row -->
 
                   </a>
-                  <a class="list-group-item px-0" href="dashboard-topnav.html#!">
+                  <a class="list-group-item px-0" href="!">
 
                     <div class="row">
                       <div class="col-auto">
@@ -529,7 +529,7 @@
                     </div> <!-- / .row -->
 
                   </a>
-                  <a class="list-group-item px-0" href="dashboard-topnav.html#!">
+                  <a class="list-group-item px-0" href="!">
 
                     <div class="row">
                       <div class="col-auto">
